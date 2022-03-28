@@ -40,12 +40,14 @@ body {
 }
 
 #signup2-content {
+    margin-top: 4em;
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 60px;
-    max-width: 40rem;
+    width: 100%;
+    max-width: 35rem;
     height: 30rem;
     box-shadow: 3px 3px 81px rgba(0, 0, 0, 0.1);
 }
@@ -77,6 +79,15 @@ form input[type] {
     margin-left: 0.75em;
 }
 
+.input-password, .input-address, .input-phone {
+    width: 28rem;
+}
+
+.input-name {
+    margin-top: 1em;
+}
+
+
 form input {
     margin-top: 2em;
 }
@@ -94,6 +105,17 @@ form input[type]::placeholder {
 }
 
 #signup1-content button {
+    margin-top: 1em;
+    background-color: #6FD1A0;
+    border: none;
+    color: #224957;
+    border-radius: 10px;
+    height: 2.75em;
+    width: 80%;
+    font-size: 12pt;
+}
+
+#signup2-content button {
     margin-top: 1em;
     background-color: #6FD1A0;
     border: none;
@@ -123,6 +145,10 @@ i {
 
 .icon-focus-visible {
     color: rgba(34, 73, 87, 0.89);
+}
+
+#signup2-content i {
+    color: black;
 }
 
 

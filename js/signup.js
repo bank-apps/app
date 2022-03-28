@@ -5,3 +5,7 @@ function changeIconColorFocus(icon) {
 function changeIconColorFocusOut(icon) {
     $("." + icon).removeClass("icon-focus-visible");
 }
+
+function passwordShowHide() {
+
+}
