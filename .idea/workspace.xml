@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Solving Sync Problems">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_28_2022_1_09_PM_[Changes]1/Master Card 2 (Dark Crystal).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_28_2022_1_09_PM_[Changes]1/Rectangle 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_28_2022_1_09_PM_[Changes]1/mano.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_28_2022_1_09_PM_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_28_2022_1_09_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_28_2022_1_09_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_28_2022_1_09_PM__Changes_1.xml" beforeDir="false" />
+    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Sprint0">
+      <change afterPath="$PROJECT_DIR$/web/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/signup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/html/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/html/signup1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/html/signup2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/Vectors-login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/signup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/Master Card 2 (Dark Crystal).png" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/img/Master Card 2 (Dark Crystal).png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/Rectangle 1.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/img/Rectangle 1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/bien.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/img/bien.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/indexImage.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/img/indexImage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/indexImage1.1.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/img/indexImage1.1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/indexImage1.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/img/indexImage1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/indexImage2.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/img/indexImage2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/mano.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/img/mano.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/mystyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/mystyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/about.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/landingpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/landingpage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/scripts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +22,16 @@
         <option value="HTML File" />
         <option value="CSS File" />
       </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="nahima" />
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="OPTIONS">
+      <set>
+        <option value="FF_ONLY" />
+      </set>
     </option>
   </component>
   <component name="Git.Settings">
@@ -52,12 +50,15 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="26tOLegLxTgXqN84azJTsa0FET1" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -100,6 +101,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First commit" />
     <option name="LAST_COMMIT_MESSAGE" value="First commit" />
   </component>
