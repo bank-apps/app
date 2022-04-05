@@ -1,0 +1,178 @@
+Index: html/landingpage.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <link href=\"../css/styles.css\" rel=\"stylesheet\" />\r\n    <link href=\"../css/mystyles.css\" rel=\"stylesheet\" />\r\n    <title>Bank App</title>\r\n</head>\r\n<body>\r\n    <nav class=\"navbar navbar-expand-sm fixed-top navbar-light\">\r\n        <div class=\"container\">\r\n            <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbar1\">\r\n                <span class=\"navbar-toggler-icon\"></span>\r\n            </button>\r\n           <!-- <a class=\"navbar-home\" href=\"#\">Home</a>-->\r\n            <div class=\"collapse navbar-collapse\" id=\"navbar1\">\r\n                <ul class=\"navbar-nav\">\r\n                    <li class=\"nav-item active\">\r\n                        <a class=\"nav-about\" href=\"#\">Home</a>\r\n                    </li>\r\n\r\n                    <li class=\"nav-item active\">\r\n                        <a class=\"nav-about\" href=\"#\">About us</a>\r\n                    </li>\r\n\r\n                </ul>\r\n                <ul class=\"navbar-nav2\">\r\n                    <li class=\"nav-item active\">\r\n                        <a class=\"nav-about\" href=\"#\">Login</a>\r\n                    </li>\r\n\r\n                    <li class=\"nav-item active\">\r\n                        <a class=\"nav-about\" href=\"#\">Sing in</a>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </nav>\r\n\r\n    <div class=\"MainWeb\">\r\n        <img src=\"../assets/img/indexImage1.1.png\" class=\"LandingPageRightRectangle\">\r\n        <img src=\"../assets/img/indexImage2.png\" class=\"LeftTriangle \">\r\n\r\n        <div class=\"BankApText\">Bank App</div>\r\n        <div class=\"GetAll\">Get all of your services from here</div>\r\n        <div class=\"Forbetter\">For better experience</div>\r\n    </div>\r\n\r\n</body>\r\n</html>
+===================================================================
+diff --git a/html/landingpage.html b/html/landingpage.html
+--- a/html/landingpage.html	
++++ b/html/landingpage.html	
+@@ -1,4 +1,4 @@
+-<!DOCTYPE html>
++ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+@@ -46,5 +46,7 @@
+         <div class="Forbetter">For better experience</div>
+     </div>
+ 
++
++
+ </body>
+ </html>
+\ No newline at end of file
+Index: css/mystyles.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.LandingPageRightRectangle{\r\n    width: 60%;\r\n    height: auto;\r\n    position: absolute;\r\n    top: 0;\r\n    right: 0;\r\n}\r\n\r\n.BankApText{\r\n    position: absolute;\r\n    width: 74px;\r\n    height: 288px;\r\n    left: 113px;\r\n    top: 165px;\r\n    font-family: 'Lexend Deca', serif;\r\n    font-style: normal;\r\n    font-weight: 600;\r\n    font-size: 144px;\r\n    line-height: 100%;\r\n    color: #6FD1A0;\r\n    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);\r\n}\r\n\r\n.GetAll{\r\n    position: absolute;\r\n    width: 587px;\r\n    height: 47px;\r\n    left: 283px;\r\n    top: 640px;\r\n\r\n    font-family: 'Roboto', serif;\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    font-size: 40px;\r\n    line-height: 47px;\r\n    color: #6FD1A0;\r\n}\r\n\r\n.Forbetter{\r\n    position: absolute;\r\n    width: 355px;\r\n    height: 47px;\r\n    left: 285.37px;\r\n    top: 687.69px;\r\n\r\n    font-family: 'Roboto', serif;\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    font-size: 40px;\r\n    line-height: 47px;\r\n    color: #6FD1A0;\r\n}\r\n\r\n.LeftTriangle{\r\n    position: absolute;\r\n    bottom: 0;\r\n    left:0;\r\n    width: 25%;\r\n    float: left;\r\n}\r\n\r\n.navbar-home {\r\n    padding-top: 0.3125rem;\r\n    padding-bottom: 0.3125rem;\r\n    margin-left: 10em;\r\n    font-size: 2rem;\r\n    white-space: nowrap;\r\n}\r\n\r\n.nav-about {\r\n    font-size: 1.5rem;\r\n    width: 100%;\r\n    display: block;\r\n    padding: 0.5rem 1rem;\r\n    color: white;\r\n    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;\r\n}\r\n\r\n.navbar-nav2 {\r\n    margin-left: 10%;\r\n    padding-left: 0;\r\n    margin-bottom: 0;\r\n    list-style: none;\r\n\r\n\r\n}
+===================================================================
+diff --git a/css/mystyles.css b/css/mystyles.css
+--- a/css/mystyles.css	
++++ b/css/mystyles.css	
+@@ -65,6 +65,7 @@
+     margin-left: 10em;
+     font-size: 2rem;
+     white-space: nowrap;
++
+ }
+ 
+ .nav-about {
+@@ -73,7 +74,7 @@
+     display: block;
+     padding: 0.5rem 1rem;
+     color: white;
+-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
++    transition: color 0.5s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+ }
+ 
+ .navbar-nav2 {
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"276161cf-72b8-4ed8-b593-c863c79854a9\" name=\"Changes\" comment=\"Landing Page Bootstrap\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.gitignore\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/BankApp.iml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/modules.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/vcs.xml\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -1,17 +1,29 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="276161cf-72b8-4ed8-b593-c863c79854a9" name="Changes" comment="Landing Page Bootstrap">
+-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/BankApp.iml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
++    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Solving Sync Problems">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_28_2022_1_09_PM_[Changes]1/Master Card 2 (Dark Crystal).png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_28_2022_1_09_PM_[Changes]1/Rectangle 1.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_28_2022_1_09_PM_[Changes]1/mano.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_28_2022_1_09_PM_[Changes]1/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_28_2022_1_09_PM__Changes_1.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/css/mystyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mystyles.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/html/landingpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/landingpage.html" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="CSS File" />
++        <option value="HTML File" />
++      </list>
++    </option>
++  </component>
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+@@ -20,12 +32,73 @@
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="ProblemsViewState">
+-    <option name="selectedTabId" value="CurrentFile" />
++  <component name="GitSEFilterConfiguration">
++    <file-type-list>
++      <filtered-out-file-type name="LOCAL_BRANCH" />
++      <filtered-out-file-type name="REMOTE_BRANCH" />
++      <filtered-out-file-type name="TAG" />
++      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
++    </file-type-list>
+   </component>
++  <component name="MarkdownSettingsMigration">
++    <option name="stateVersion" value="1" />
++  </component>
++  <component name="ProjectId" id="26tOLegLxTgXqN84azJTsa0FET1" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent">
++    <property name="DefaultHtmlFileTemplate" value="HTML File" />
++    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
++    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
++    <property name="WebServerToolWindowFactoryState" value="false" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
++    <property name="list.type.of.created.stylesheet" value="CSS" />
++    <property name="vue.rearranger.settings.migration" value="true" />
++  </component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\Sebastián Fernández\WebstormProjects\BankApp\html" />
++      <recent name="C:\Users\Sebastián Fernández\WebstormProjects\BankApp\assets\img" />
++      <recent name="C:\Users\Sebastián Fernández\WebstormProjects\BankApp" />
++    </key>
++  </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Solving Sync Problems" />
++      <created>1648239362381</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1648239362381</updated>
++      <workItem from="1648239365253" duration="18344000" />
++      <workItem from="1648462173986" duration="2830000" />
++      <workItem from="1648540028311" duration="644000" />
++      <workItem from="1648548915357" duration="594000" />
++      <workItem from="1648767532741" duration="66000" />
++      <workItem from="1649147779454" duration="320000" />
++    </task>
++    <task id="LOCAL-00001" summary="First commit">
++      <created>1648239950377</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1648239950377</updated>
++    </task>
++    <task id="LOCAL-00002" summary="Solving Sync Problems">
++      <created>1648470371011</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1648470371011</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+     <option name="TAB_STATES">
+@@ -38,4 +111,9 @@
+       </map>
+     </option>
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="First commit" />
++    <MESSAGE value="Solving Sync Problems" />
++    <option name="LAST_COMMIT_MESSAGE" value="Solving Sync Problems" />
++  </component>
+ </project>
+\ No newline at end of file
