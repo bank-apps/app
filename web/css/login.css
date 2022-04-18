@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300;400;500;600;700&display=swap');
+h1, h2 {
+    font-family: 'Lexend Deca', monospace;
+    color: #224957;
+    text-align: center;
+    margin-top: 1em;
+}
+h1 {
+    font-weight: bold;
+    font-size: 36pt;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 16pt;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    background-color: #F2F5FA;
+}
+
+.image-footer-background {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#login-content {
+    margin-top: 4em;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 60px;
+    width: 100%;
+    max-width: 35rem;
+    height: 30rem;
+    box-shadow: 3px 3px 81px rgba(0, 0, 0, 0.1);
+
+}
+
+#login-content button {
+    margin-top: 1em;
+    background-color: #6FD1A0;
+    border: none;
+    color: #224957;
+    border-radius: 10px;
+    height: 2.75em;
+    width: 80%;
+    font-size: 12pt;
+}
+
+form input[type] {
+    color: white;
+    background-color: rgba(34, 73, 87, 0.89);
+    border-radius: 10px;
+    margin-top: 1em;
+    height: 2.75em;
+    border: none;
+}
+
+form input[type]::placeholder {
+    color:white;
+
+}
+
+form input[type] {
+    margin-top: 2em;
+    width: 28em;
+    padding-left: 3em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image-footer-background {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.fa-user {
+    position: absolute;
+    margin-bottom: 2.75em;
+    margin-left: 1em;
+}
+
+.fa-lock {
+    position: absolute;
+    margin-top: 6.75em;
+    margin-left: 1em;
+}
+
+.form-check {
+    margin-top: 1.5em;
+}
+
+#remember-me-check-label {
+    color: #093545;
+    font-size: 10pt;
+}
+
+#remember-me-check {
+    background-color: rgba(34, 73, 87, 0.89);
+}
+
+#forgot-password-link {
+    margin-top: 1.5em;
+}
+
+#forgot-password-link a {
+    text-decoration: none;
+    color: #093545;
+    font-size: 10pt;
+}
+
+#form-login-features {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 13em;
+}
+
+.icon-focus-visible {
+    color: rgba(34, 73, 87, 0.89);
+}
