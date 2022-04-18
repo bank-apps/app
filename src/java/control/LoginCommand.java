@@ -10,6 +10,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Bank;
 
 public class LoginCommand {
     protected ServletContext context;
@@ -22,7 +23,8 @@ public class LoginCommand {
         this.response = response;
     }
     
-    public void process() throws ServletException, IOException {
+    public void process(String dni, String password) throws ServletException, IOException {
+        Bank.login(dni, password);
         forward("/jsp/dashboard.jsp");
     }
     
