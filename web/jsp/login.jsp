@@ -26,7 +26,7 @@
     <form id="form-login" action="${pageContext.request.contextPath}/LoginServlet" method="post" class="was-validated">
         <div class="input-form">
             <i class="fa-solid fa-user"></i>
-            <input type="text" required class="input-sign-in form-control" name="dni-email" placeholder="DNI" onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')">
+            <input type="text" required class="input-sign-in form-control" name="dni" placeholder="DNI" onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')">
             <i class="fa-solid fa-lock"></i>
             <input type="password" required class="input-password form-control" name="password" placeholder="Password" onfocus="changeIconColorFocus('fa-lock')" onfocusout="changeIconColorFocusOut('fa-lock')">
         </div>

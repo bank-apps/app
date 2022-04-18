@@ -6,6 +6,9 @@ package control;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -82,17 +85,22 @@ public class SignUpServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        SignUpCommand command = new SignUpCommand();
+        command.init(getServletContext(), request, response);
         if (request.getParameter("second-slide").equals("y")) {
-            processRequest(request, response);
+            
+            try {
+                command.process(firstname, lastname, dni, email, request.getParameter("address"), request.getParameter("phone"), request.getParameter("password"));
+            } catch (SQLException ex) {
+                Logger.getLogger(SignUpServlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-        else {
+        else if (request.getParameter("second-slide").equals("n")) {
             firstname = request.getParameter("firstname");
             lastname = request.getParameter("lastname");
             dni = request.getParameter("dni");
             email = request.getParameter("email");
-            SignUp1Command command = new SignUp1Command();
-            command.init(getServletContext(), request, response);
-            command.process();
+            command.processFirstSlide();
         }
         
     }

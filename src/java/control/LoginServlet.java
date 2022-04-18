@@ -77,7 +77,7 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         LoginCommand command = new LoginCommand();
         command.init(getServletContext(), request, response);
-        command.process();
+        command.process(request.getParameter("dni"), request.getParameter("password"));
     }
 
     /**

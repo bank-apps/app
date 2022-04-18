@@ -8,10 +8,10 @@ import java.util.Random;
 public class Bank {
 
     public Bank() {
-        DataBaseManager.createNewDatabase("database.db");
+        DataBaseManager.connect();
     }
 
-    private String GenerateIBAN(){
+    private static String GenerateIBAN(){
         Random random = new Random();
         String country_code = "ES";
         String control_code = String.format("%02d", random.nextInt(99));
@@ -25,7 +25,7 @@ public class Bank {
         return IBAN;
     }
     
-    public void register(UserData userData) throws SQLException {    
+    public static String register(UserData userData) {    
         // Table USERS
         String fields = "dni,password,name,surnames,email,address,'phone number'";
         String values = String.join(", ", userData.getArrayData());
@@ -41,10 +41,16 @@ public class Bank {
         // Table USER HISTORIES
         fields = "iban";
         values = "'" + IBAN + "'";
-        DataBaseManager.Insert("'user histories'", fields, values);
+        
+        try{
+            DataBaseManager.Insert("'user histories'", fields, values);
+            return "OK";
+        }catch(Exception e){
+            return "El usuario ya existe";   
+        }     
     }
     
-    public void login(String dni, String passwd){
+    public static void login(String dni, String passwd){
         
     }
     
