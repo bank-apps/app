@@ -8,7 +8,7 @@ import java.util.Random;
 public class Bank {
 
     public Bank() {
-        DataBaseManager.createNewDatabase("database.db");
+        DataBaseManager.connect();
     }
 
     private String GenerateIBAN(){
@@ -25,7 +25,7 @@ public class Bank {
         return IBAN;
     }
     
-    public void register(UserData userData) throws SQLException {    
+    public String register(UserData userData) {    
         // Table USERS
         String fields = "dni,password,name,surnames,email,address,'phone number'";
         String values = String.join(", ", userData.getArrayData());
@@ -41,7 +41,13 @@ public class Bank {
         // Table USER HISTORIES
         fields = "iban";
         values = "'" + IBAN + "'";
-        DataBaseManager.Insert("'user histories'", fields, values);
+        
+        try{
+            DataBaseManager.Insert("'user histories'", fields, values);
+            return "OK";
+        }catch(Exception e){
+            return "El usuario ya existe";   
+        }     
     }
     
     public void login(String dni, String passwd){

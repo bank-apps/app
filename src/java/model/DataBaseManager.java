@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class DataBaseManager {
     
-    private static String actualDB;
+    private static String actualDB = "jdbc:sqlite:database.db";
     
     static void createNewDatabase(String fileName) {
         String url = "jdbc:sqlite:" + fileName;
@@ -28,9 +28,9 @@ public class DataBaseManager {
 
     static Connection connect(){
         // Cadena de conexión SQLite
-        String url = actualDB;
         Connection conn = null;
         try {
+            String url = actualDB;
             conn = DriverManager.getConnection(url);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
