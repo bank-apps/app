@@ -38,13 +38,13 @@ public class DataBaseManager {
         return conn;
     }
     
-    static void Insert(String table, String fields, String values){
+    static void Insert(String table, String fields, String values) throws Exception {
         String sql = "INSERT INTO " + table + "(" + fields + ") VALUES(" + values + ")";
         try (Connection conn = DataBaseManager.connect()){           
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            throw new Exception(String.valueOf(e));
         }
     }
     

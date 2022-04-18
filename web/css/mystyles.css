@@ -1,0 +1,86 @@
+.LandingPageRightRectangle{
+    width: 60%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.BankApText{
+    position: absolute;
+    width: 74px;
+    height: 288px;
+    left: 113px;
+    top: 165px;
+    font-family: 'Lexend Deca', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 144px;
+    line-height: 100%;
+    color: #6FD1A0;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.GetAll{
+    position: absolute;
+    width: 587px;
+    height: 47px;
+    left: 283px;
+    top: 640px;
+
+    font-family: 'Roboto', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 47px;
+    color: #6FD1A0;
+}
+
+.Forbetter{
+    position: absolute;
+    width: 355px;
+    height: 47px;
+    left: 285.37px;
+    top: 687.69px;
+
+    font-family: 'Roboto', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 47px;
+    color: #6FD1A0;
+}
+
+.LeftTriangle{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 25%;
+    float: left;
+}
+
+.navbar-home {
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-left: 10em;
+    font-size: 2rem;
+    white-space: nowrap;
+}
+
+.nav-about {
+    font-size: 1.5rem;
+    width: 100%;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: white;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.navbar-nav2 {
+    margin-left: 10%;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+
+
+}
