@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300;400;500;600;700&display=swap');
+
+h1, h2 {
+    font-family: 'Lexend Deca', monospace;
+    color: #224957;
+    text-align: center;
+    margin-top: 1em;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 36pt;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 16pt;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    background-color: #F2F5FA;
+}
+
+#signup1-content, #signup2-content {
+    margin-top: 4em;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 60px;
+    width: 100%;
+    max-width: 35rem;
+    height: 30rem;
+    box-shadow: 3px 3px 81px rgba(0, 0, 0, 0.1);
+}
+
+
+form input[type] {
+    color: white;
+    background-color: rgba(34, 73, 87, 0.89);
+    border-radius: 10px;
+    margin-top: 1em;
+    height: 2.75em;
+}
+
+.input-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.input-dni, .input-email {
+    padding-left: 2em;
+    width: 90%;
+}
+
+
+.input-firstname, .input-lastname {
+    width: 90%;
+    margin-left: 0.75em;
+}
+
+.input-password, .input-address, .input-phone {
+    width: 28rem;
+    padding-left: 2em;
+}
+
+.input-name {
+    margin-top: 1em;
+}
+
+
+form input {
+    margin-top: 2em;
+}
+
+.input-name input[type] {
+    margin-top: 1.75em;
+}
+
+form input[type]::placeholder {
+    color:white;
+}
+
+.input-name input[type]::placeholder {
+    padding-left: 1em;
+}
+
+#signup1-content button {
+    margin-top: 1em;
+    background-color: #6FD1A0;
+    border: none;
+    color: #224957;
+    border-radius: 10px;
+    height: 2.75em;
+    width: 95%;
+    font-size: 12pt;
+    margin-left: 0.75em;
+}
+
+#signup2-content button {
+    margin-top: 1em;
+    background-color: #6FD1A0;
+    border: none;
+    color: #224957;
+    border-radius: 10px;
+    height: 2.75em;
+    width: 80%;
+    font-size: 12pt;
+}
+
+.image-footer-background {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.row {
+    justify-content: center;
+}
+
+#form-slide-1 i {
+    position: absolute;
+    margin-top: 1.8em;
+    margin-left: 1.5em;
+}
+
+#form-slide-2 i {
+    position: absolute;
+    margin-top: 1.8em;
+}
+
+i {
+   color: white;
+}
+
+#form-slide-2 input[type]::placeholder {
+    padding-left: 0.5em;
+}
+
+.icon-focus-visible {
+    color: rgba(34, 73, 87, 0.89);
+}
+
