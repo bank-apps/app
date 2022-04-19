@@ -1,39 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="276161cf-72b8-4ed8-b593-c863c79854a9" name="Changes" comment="Sprint0">
-      <change afterPath="$PROJECT_DIR$/web/css/dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/html/dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/html/fakelanding.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/html/fakelandingpage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/bg-intro-desktop.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/bg-intro-mobile.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/icon-api.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/icon-budgeting.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/icon-close.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/icon-facebook.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/icon-hamburger.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/icon-instagram.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/icon-onboarding.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/icon-online.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/icon-pinterest.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/icon-twitter.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/icon-youtube.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/image-confetti.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/image-currency.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/image-mockups.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/image-plane.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/image-restaurant.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/logo-footer.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images2/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/BankApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BankApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_5_2022_11_25_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_5_2022_11_25_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_5_2022_11_25_AM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_5_2022_11_25_AM__Changes_1.xml" afterDir="false" />
+    <list default="true" id="276161cf-72b8-4ed8-b593-c863c79854a9" name="Changes" comment="Testting + Creating Dashboard">
+      <change afterPath="$PROJECT_DIR$/web/images/transactions.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/mystyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/mystyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/html/landingpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/landingpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/html/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/dashboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +84,14 @@
       <updated>1649155025166</updated>
       <workItem from="1649155028789" duration="504000" />
     </task>
+    <task id="LOCAL-00001" summary="Testting + Creating Dashboard">
+      <created>1650328539258</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1650328539258</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +111,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
+    <MESSAGE value="Testting + Creating Dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testting + Creating Dashboard" />
   </component>
 </project>
