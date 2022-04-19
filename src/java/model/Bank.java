@@ -25,30 +25,36 @@ public class Bank {
         return IBAN;
     }
     
-    public String register(UserData userData) {    
-        // Table USERS
-        String fields = "dni,password,name,surnames,email,address,'phone number'";
-        String values = String.join(", ", userData.getArrayData());
-        DataBaseManager.Insert("users", fields, values);
+    public String register(UserData userData) throws Exception{     
+        int id = DataBaseManager.SelectUserId(userData.getDNI());
 
-        // Table BANK ACCOUNTS
-        String IBAN = GenerateIBAN();
-        fields = "iban,'owner id'";
-        int owner_id = DataBaseManager.SelectUserId(userData.getDNI());
-        values = "'" + IBAN + "'," + owner_id;
-        DataBaseManager.Insert("'bank accounts'", fields, values);
-        
-        // Table USER HISTORIES
-        fields = "iban";
-        values = "'" + IBAN + "'";
-        
+        if(id != 0){
+            return "Este usuario ya existe";
+        }
         try{
-            DataBaseManager.Insert("'user histories'", fields, values);
+            // Table USERS
+            String fields = "dni,password,name,surnames,email,address,'phone number'";
+            String values = String.join(", ", userData.getArrayData());
+
+            DataBaseManager.Insert("users", fields, values);
+
+            // Table BANK ACCOUNTS
+            String IBAN = GenerateIBAN();
+            fields = "iban,'owner id'";
+            int owner_id = DataBaseManager.SelectUserId(userData.getDNI());
+            values = "'" + IBAN + "'," + owner_id;
+            DataBaseManager.Insert("'bank accounts'", fields, values);
+
+            // Table USER HISTORIES
+            fields = "iban";
+            values = "'" + IBAN + "'";
+
+            DataBaseManager.Insert("'user histories'", fields, values);  
             return "OK";
         }catch(Exception e){
-            return "El usuario ya existe";   
-        }     
-    }
+            return e.getMessage();
+        }
+
     
     public void login(String dni, String passwd){
         
