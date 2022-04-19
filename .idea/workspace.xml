@@ -1,15 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Sprint0">
-      <change afterPath="$PROJECT_DIR$/web/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/css/signup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/html/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/html/signup1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/html/signup2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images/Vectors-login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/js/signup.js" afterDir="false" />
+    <list default="true" id="276161cf-72b8-4ed8-b593-c863c79854a9" name="Changes" comment="Sprint0">
+      <change afterPath="$PROJECT_DIR$/web/css/dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/html/dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/html/fakelanding.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/html/fakelandingpage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/bg-intro-desktop.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/bg-intro-mobile.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/favicon-32x32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/icon-api.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/icon-budgeting.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/icon-close.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/icon-facebook.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/icon-hamburger.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/icon-instagram.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/icon-onboarding.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/icon-online.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/icon-pinterest.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/icon-twitter.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/icon-youtube.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/image-confetti.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/image-currency.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/image-mockups.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/image-plane.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/image-restaurant.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/logo-footer.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images2/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BankApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BankApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_5_2022_11_25_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_5_2022_11_25_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_5_2022_11_25_AM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_5_2022_11_25_AM__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/mystyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/mystyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/html/landingpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/landingpage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +92,11 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sebastián Fernández\WebstormProjects\BankApp" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Sebastián Fernández\WebstormProjects\BankApp\web" />
       <recent name="C:\Users\Sebastián Fernández\WebstormProjects\BankApp\html" />
       <recent name="C:\Users\Sebastián Fernández\WebstormProjects\BankApp\assets\img" />
       <recent name="C:\Users\Sebastián Fernández\WebstormProjects\BankApp" />
