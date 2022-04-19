@@ -93,6 +93,8 @@ public class SignUpServlet extends HttpServlet {
                 command.process(firstname, lastname, dni, email, request.getParameter("address"), request.getParameter("phone"), request.getParameter("password"));
             } catch (SQLException ex) {
                 Logger.getLogger(SignUpServlet.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(SignUpServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         else if (request.getParameter("second-slide").equals("n")) {

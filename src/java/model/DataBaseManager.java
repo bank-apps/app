@@ -25,8 +25,9 @@ public class DataBaseManager {
         }
     }
 
-    static Connection connect(){
+    static Connection connect() throws ClassNotFoundException{
         // Cadena de conexión SQLite
+        Class.forName("org.sqlite.JDBC");
         Connection conn = null;
         try {
             String url = actualDB;
@@ -37,7 +38,7 @@ public class DataBaseManager {
         return conn;
     }
     
-    static void Insert(String table, String fields, String values){
+    static void Insert(String table, String fields, String values) throws ClassNotFoundException{
         String sql = "INSERT INTO " + table + "(" + fields + ") VALUES(" + values + ")";
         try (Connection conn = DataBaseManager.connect()){
             PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -47,7 +48,7 @@ public class DataBaseManager {
         }
     }
     
-    static int SelectUserId(String dni){
+    static int SelectUserId(String dni) throws ClassNotFoundException{
         String sql = "SELECT id FROM USERS WHERE dni=" + dni;
         try (Connection conn = connect()){
             Statement stmt = conn.createStatement();

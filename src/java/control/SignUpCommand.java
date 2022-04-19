@@ -33,9 +33,10 @@ public class SignUpCommand {
         forward("/jsp/signup2.jsp");
     }
     
-    public void process(String firstname, String lastname, String dni, String email, String address, String phone, String password) throws ServletException, IOException, SQLException {
+    public void process(String firstname, String lastname, String dni, String email, String address, String phone, String password) throws ServletException, IOException, SQLException, ClassNotFoundException {
         UserData userData = new UserData(dni, password, firstname, lastname, email, address, phone);
         Bank.register(userData);
+        forward("/jsp/dashboard.jsp");
         
     }
     
