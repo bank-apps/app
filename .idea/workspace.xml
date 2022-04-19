@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="276161cf-72b8-4ed8-b593-c863c79854a9" name="Changes" comment="Testting + Creating Dashboard">
-      <change afterPath="$PROJECT_DIR$/web/images/transactions.png" afterDir="false" />
+    <list default="true" id="276161cf-72b8-4ed8-b593-c863c79854a9" name="Changes" comment="Adding Resources to Dashboard">
+      <change afterPath="$PROJECT_DIR$/web/css/transfer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/html/sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/html/transfer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/sidebarLoader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/sidebar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/html/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/dashboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,8 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -43,7 +47,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="26tOLegLxTgXqN84azJTsa0FET1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -59,12 +63,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/css" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sebastián Fernández\WebstormProjects\BankApp\web\css" />
       <recent name="C:\Users\Sebastián Fernández\WebstormProjects\BankApp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -91,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650328539258</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adding Resources to Dashboard">
+      <created>1650329095536</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1650329095536</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +124,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First commit" />
     <MESSAGE value="Testting + Creating Dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testting + Creating Dashboard" />
+    <MESSAGE value="Adding Resources to Dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding Resources to Dashboard" />
   </component>
 </project>

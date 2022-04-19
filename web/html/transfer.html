@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <title>Title</title>
+    <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    --><script src="https://kit.fontawesome.com/5647d2b0bd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/b269aa07db.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/transfer.css">
+
+</head>
+<body>
+
+<div id="sidebarLoaded"></div>
+
+<!-- TEMPORAL-->
+<div class="sidebar">
+    <div class="middleSide">
+        <a href="#notificaciones"><i class="fa-solid fa-bell"></i></a>
+        <a href="#perfil"><i class="fa-solid fa-user"></i></a>
+        <a href="#dashboard"><i class="fa-solid fa-bars"></i></a>
+        <a href="#acciones"><i class="fa-solid fa-arrow-trend-up"></i></a>
+        <a  href="#crypto"><i class="fa-brands fa-bitcoin"></i></a>
+    </div>
+</div>
+<!--TEMP-->
+
+<main>
+    <div id="transfer-content">
+        <div id="login-info">
+            <h1>Send Money</h1>
+            <h2>Pay anyone, anywhere</h2>
+        </div>
+        <form id="form-login" action="#" class="was-validated">
+            <i class="fa-solid fa-user"></i>
+
+            <div class="Recipient">
+            <label for="firstname">Recipient</label>
+            <input type="text" required class="input-sign-in form-control" name="dni-email" placeholder="IBAN ES66 0019 0020 9612 3456 7890" onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')">
+            </div>
+
+
+            <i class="fa-solid fa-user"></i>
+            <input type="text" required class="input-sign-in form-control" name="dni-email" placeholder="Place here the concept of the transfer" onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')">
+
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" required class="input-password form-control" name="password" placeholder="Password" onfocus="changeIconColorFocus('fa-lock')" onfocusout="changeIconColorFocusOut('fa-lock')">
+
+            <label for="firstname">Recipient</label>
+            <input type="text" required class="input-sign-in form-control" name="firstname" id="firstname" placeholder="Your firstname and lastname" onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')">
+
+        </form>
+
+
+
+        <div id="form-login-features">
+            <div class="form-check">
+                <label for="remember-me-check" id="remember-me-check-label">
+                    Assecto henbiar hel dinero
+                </label>
+                <input class="form-check-input" type="checkbox" value="" id="remember-me-check">
+            </div>
+            <div id="notworking-link">
+                <a href="#">Not working?</a>
+            </div>
+
+        </div>
+
+        <button type="submit" value="Login">Confirm Transfer</button>
+    </div>
+</main>
+
+</body>
+</html>
