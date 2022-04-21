@@ -1,5 +1,8 @@
 package model;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class BankAccount {
     
     private final String IBAN;
@@ -20,6 +23,11 @@ public class BankAccount {
 
     public void setBalance(Double balance) {
         this.balance = balance;
+        /*try {
+            DataBaseManager.UpdateWithIBAN("'bank accounts'", "'balance'", this.balance.toString(), IBAN);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }*/
     }    
     
 }

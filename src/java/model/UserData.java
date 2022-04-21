@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class UserData {
     
     private final String DNI;
@@ -70,6 +72,18 @@ public class UserData {
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+    
+    public ArrayList<String> getArrayData(){
+        ArrayList<String> arrayData = new ArrayList<>();
+        arrayData.add(DNI);
+        arrayData.add(password);
+        arrayData.add(name);
+        arrayData.add(surnames);
+        arrayData.add(email);
+        arrayData.add(address);
+        arrayData.add(phoneNumber);
+        return arrayData;
     }
     
 }
