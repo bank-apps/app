@@ -126,7 +126,7 @@ form {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 13em;
+    gap: 6em;
 }
 
 .icon-focus-visible {
@@ -163,34 +163,20 @@ form {
 
 }
 .chico1{
-    width: 33%;
+    width: 45%;
 
     float: left;
 }
 .chico2 {
-
-    margin-left: 2%;
-    width: 33%;
+    width: 10%;
 }
-.arrow{
-    position: relative;
-    left: 35%;
-    top: 50%;
-}
-
-
-
 .chico3{
-    margin-left: 2%;
-    width: 33%;
+    width: 45%;
     float: left;
 }
-.quantity form input[type]{
-    margin-top: 2em;
-    width: 8em;
-    padding-left: 3em;
-}
 
-.perfil{
-    width: 24px;
+.arrow{
+    position: relative;
+    left: 8%;
+    top: 53%;
 }
