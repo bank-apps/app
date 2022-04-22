@@ -1,7 +1,5 @@
 package model;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
@@ -59,5 +57,16 @@ public class DataBaseManager {
             System.out.println(e.getMessage());
         }
         return 0;
+    }
+    
+    static String SelectUserPassword(int id) throws Exception{
+        String sql = "SELECT password FROM USERS WHERE id=" + id;
+        try (Connection conn = connect()){
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            return rs.getString("password");
+        } catch (SQLException e) {
+            throw new Exception(String.valueOf(e));
+        }
     }
 }

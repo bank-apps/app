@@ -1,4 +1,3 @@
-<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,10 +9,9 @@
     <script src="https://kit.fontawesome.com/b269aa07db.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/signup.js"></script>
-    
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signup.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css">
-    
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/failedlogin.css">
     <title>Sign in</title>
 </head>
 <body>
@@ -24,7 +22,10 @@
       <h1>Sign in</h1>
       <h2>Sign in and start managing your money</h2>
     </div>
-
+      
+    <div id="login-error-message">
+        Incorrect username or password
+    </div>
 
     <form id="form-login" action="${pageContext.request.contextPath}/LoginServlet" method="post" class="was-validated">
         <div class="input-form">

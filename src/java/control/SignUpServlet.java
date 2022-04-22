@@ -6,6 +6,8 @@ package control;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -90,7 +92,10 @@ public class SignUpServlet extends HttpServlet {
         if (request.getParameter("second-slide").equals("y")) {
             
             try {
-                command.process(firstname, lastname, dni, email, request.getParameter("address"), request.getParameter("phone"), request.getParameter("password"));
+                String address = "'" + request.getParameter("address") + "'";
+                String phone = "'" + request.getParameter("phone") + "'";
+                String password = "'" + request.getParameter("password") + "'";
+                command.process(firstname, lastname, dni, email, address, phone, password);
             } catch (SQLException ex) {
                 Logger.getLogger(SignUpServlet.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ClassNotFoundException ex) {
@@ -98,11 +103,12 @@ public class SignUpServlet extends HttpServlet {
             }
         }
         else if (request.getParameter("second-slide").equals("n")) {
-            firstname = request.getParameter("firstname");
-            lastname = request.getParameter("lastname");
-            dni = request.getParameter("dni");
-            email = request.getParameter("email");
+            firstname = "'" + request.getParameter("firstname") + "'";
+            lastname = "'" + request.getParameter("lastname") + "'";
+            dni = "'" + request.getParameter("dni") + "'";
+            email = "'" + request.getParameter("email") + "'";
             command.processFirstSlide();
+            
         }
         
     }

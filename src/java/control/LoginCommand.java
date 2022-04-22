@@ -24,8 +24,13 @@ public class LoginCommand {
     }
     
     public void process(String dni, String password) throws ServletException, IOException {
-        Bank.login(dni, password);
-        forward("/jsp/dashboard.jsp");
+        String loginResult = Bank.login(dni, password);
+        if (loginResult.equals("OK")) {
+            forward("/jsp/dashboard.jsp");
+        }
+        else {
+            forward("/jsp/failedlogin.jsp");
+        }
     }
     
     protected void forward(String target) throws ServletException, IOException {

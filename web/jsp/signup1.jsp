@@ -8,8 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/b269aa07db.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../js/signup.js"></script>
-    <link rel="stylesheet" href="../css/signup.css">
+    <script src="${pageContext.request.contextPath}"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signup.css">
 
     <title>Sign Up</title>
 </head>
@@ -46,7 +46,7 @@
     </div>
 </main>
 
-<img src="../images/Vectors-login.png" class="image-footer-background">
+<img src="${pageContext.request.contextPath}/images/Vectors-login.png" class="image-footer-background">
 </body>
 
 </html>
