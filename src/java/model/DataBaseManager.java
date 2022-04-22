@@ -1,5 +1,7 @@
 package model;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
@@ -10,7 +12,6 @@ import java.sql.Statement;
 
 
 public class DataBaseManager {
-    
     private static String actualDB = "jdbc:sqlite:database.db";
     
     static void createNewDatabase(String fileName) {
@@ -38,13 +39,13 @@ public class DataBaseManager {
         return conn;
     }
     
-    static void Insert(String table, String fields, String values) throws ClassNotFoundException{
+    static void Insert(String table, String fields, String values) throws ClassNotFoundException, Exception{
         String sql = "INSERT INTO " + table + "(" + fields + ") VALUES(" + values + ")";
-        try (Connection conn = DataBaseManager.connect()){
+        try (Connection conn = DataBaseManager.connect()){           
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            throw new Exception(String.valueOf(e));
         }
     }
     
