@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="added library">
-      <change afterPath="$PROJECT_DIR$/web/css/sidebar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/html/sidebar.html" afterDir="false" />
+    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Fixed sidebar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/sidebar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/html/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/sidebar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +83,14 @@
       <updated>1649155025166</updated>
       <workItem from="1649155028789" duration="504000" />
     </task>
+    <task id="LOCAL-00001" summary="Fixed sidebar">
+      <created>1650664828255</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1650664828255</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +110,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
+    <MESSAGE value="Fixed sidebar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed sidebar" />
   </component>
 </project>
