@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Sprint0">
-      <change afterPath="$PROJECT_DIR$/web/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/css/signup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/html/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/html/signup1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/html/signup2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/images/Vectors-login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/js/signup.js" afterDir="false" />
+    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Solving Sync Problems">
+      <change afterPath="$PROJECT_DIR$/web/css/dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/html/dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/transactions.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/sidebarLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_28_2022_1_09_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_28_2022_1_09_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_5_2022_11_25_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_5_2022_11_25_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_5_2022_11_25_AM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_5_2022_11_25_AM__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +21,7 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
