@@ -12,10 +12,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/b269aa07db.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="../js/requieredCheckbox.js"></script>
     <link rel="stylesheet" href="../css/transfer.css">
 
 </head>
 <body>
+
+
 
 <div id="sidebarLoaded"></div>
 
@@ -37,38 +41,44 @@
             <h1>Send Money</h1>
             <h2>Pay anyone, anywhere</h2>
         </div>
+
+        <div class="LowForm">
         <form id="form-login" action="#" class="was-validated">
-            <i class="fa-solid fa-user"></i>
+            <div class="grande">
+                <div class="chico1"><label for="quantity"></label><input onkeyup="getVal()" type="currency" required class="input-sign-in form-control" name="quantity" id="quantity" placeholder="1500$ " onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')"></div>
+                <div class="chico2">
+                    <div class="arrow">
+                        <i class="fa-solid fa-circle-arrow-right fa-3x"></i>
+                    </div>
+                </div>
+                <div class="chico3"><label for="result"></label><input type="number" required class="input-sign-in form-control" name="result" id="result" placeholder="1500$ " onfocus="changeIconColorFocus('fa-user')"></div>
+             </div>
 
             <div class="Recipient">
-            <label for="firstname">Recipient</label>
-            <input type="text" required class="input-sign-in form-control" name="dni-email" placeholder="IBAN ES66 0019 0020 9612 3456 7890" onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')">
+                <label for="recipient"></label><input type="text" required class="input-sign-in form-control" name="recipient" id="recipient" placeholder="IBAN ES66 0019 0020 9612 3456 7890" onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')">
             </div>
 
+            <div class="Name">
+                <label for="name"></label><input type="text" required class="input-sign-in form-control" name="firstname" id="name" placeholder="Your firstname and lastname" onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')">
+            </div>
 
-            <i class="fa-solid fa-user"></i>
-            <input type="text" required class="input-sign-in form-control" name="dni-email" placeholder="Place here the concept of the transfer" onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')">
-
-            <i class="fa-solid fa-lock"></i>
-            <input type="password" required class="input-password form-control" name="password" placeholder="Password" onfocus="changeIconColorFocus('fa-lock')" onfocusout="changeIconColorFocusOut('fa-lock')">
-
-            <label for="firstname">Recipient</label>
-            <input type="text" required class="input-sign-in form-control" name="firstname" id="firstname" placeholder="Your firstname and lastname" onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')">
-
+            <div class="Message">
+                <label for="message"></label><input type="text" required class="input-sign-in form-control" name="message" id="message" placeholder="Place here the concept of the transfer" onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')">
+            </div>
         </form>
-
-
+        </div>
 
         <div id="form-login-features">
             <div class="form-check">
-                <label for="remember-me-check" id="remember-me-check-label">
-                    Assecto henbiar hel dinero
+                <label for="acceptTermsLabel" id="acceptTermsLabel">
+                    I accept the terms and confirm the data provided is valid
                 </label>
-                <input class="form-check-input" type="checkbox" value="" id="remember-me-check">
+                <input class="form-check-input" type="checkbox" value="" id="acceptTermsCheck">
             </div>
             <div id="notworking-link">
                 <a href="#">Not working?</a>
             </div>
+
 
         </div>
 
@@ -76,5 +86,57 @@
     </div>
 </main>
 
+<script>function getVal() {
+    var x = document.getElementById("quantity");
+    document.getElementsByName('result')[0].placeholder=x.value;
+    document.getElementById("result").innerHTML = x.value.toUpperCase();
+}</script>
+
+
+
+<script>document.getElementById('recipient').addEventListener('input', function (e) {
+    var target = e.target, position = target.selectionEnd, length = target.value.length;
+
+    target.value = target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+    target.selectionEnd = position += ((target.value.charAt(position - 1) === ' ' && target.value.charAt(length - 1) === ' ' && length !== target.value.length) ? 1 : 0);
+});</script>
+
+
+<script>
+    var currencyInput = document.querySelector('input[type="currency"]')
+    var currency = 'EUR' // https://www.curren  cy-iso.org/dam/downloads/lists/list_one.xml
+
+    // format inital value
+    onBlur({target:currencyInput})
+
+    // bind event listeners
+    currencyInput.addEventListener('focus', onFocus)
+    currencyInput.addEventListener('blur', onBlur)
+
+
+    function localStringToNumber( s ){
+        return Number(String(s).replace(/[^0-9.-]+/g,""))
+    }
+
+    function onFocus(e){
+        var value = e.target.value;
+        e.target.value = value ? localStringToNumber(value) : ''
+    }
+
+    function onBlur(e){
+        var value = e.target.value
+
+        var options = {
+            maximumFractionDigits : 2,
+            currency              : currency,
+            style                 : "currency",
+            currencyDisplay       : "symbol"
+        }
+
+        e.target.value = (value || value === 0)
+            ? localStringToNumber(value).toLocaleString(undefined, options)
+            : ''
+    }
+</script>
 </body>
 </html>

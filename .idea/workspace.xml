@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="276161cf-72b8-4ed8-b593-c863c79854a9" name="Changes" comment="Adding Resources to Dashboard">
-      <change afterPath="$PROJECT_DIR$/web/css/transfer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/html/sidebar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/html/transfer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/js/sidebarLoader.js" afterDir="false" />
+    <list default="true" id="276161cf-72b8-4ed8-b593-c863c79854a9" name="Changes" comment="Working on Transfer Page">
+      <change afterPath="$PROJECT_DIR$/web/html/transferClone.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/Arrows/right arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/Ellipse 114.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/requieredCheckbox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_5_2022_11_25_AM_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_5_2022_11_25_AM__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/sidebar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/html/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/transfer.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/transfer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/html/transfer.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/transfer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -103,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650329095536</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Working on Transfer Page">
+      <created>1650367714576</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1650367714576</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +134,7 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="Testting + Creating Dashboard" />
     <MESSAGE value="Adding Resources to Dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding Resources to Dashboard" />
+    <MESSAGE value="Working on Transfer Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on Transfer Page" />
   </component>
 </project>
