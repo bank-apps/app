@@ -40,9 +40,12 @@ public class SignUpCommand {
         if (registerMessage.equals("OK")) {
             forward("/jsp/dashboard.jsp");
         }
-        else {
-            forward("/jsp/failedsignup.jsp");
+        else if (registerMessage.equals("Este usuario ya existe")) {
+            forward("/jsp/failedsignup1.jsp");
         }
+        else {
+            forward("/jsp/failedsignup2.jsp");
+        } 
     }
     
     protected void forward(String target) throws ServletException, IOException {
