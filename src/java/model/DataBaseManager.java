@@ -83,4 +83,14 @@ public class DataBaseManager {
         }
         return null;
     }
+    
+    static void UpdateWithIBAN(String table, String field, String value, String IBAN) throws Exception {
+        String sql = "UPDATE " + table + " set " + field + " = '" + value + "' WHERE iban = '" + IBAN + "'";
+        try ( Connection conn = DataBaseManager.connect()) {
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new Exception(e.getMessage());
+        }
+    }
 }

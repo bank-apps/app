@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300;400;500;600;700&display=swap');
+h1, h2 {
+    font-family: 'Lexend Deca', monospace;
+    color: #224957;
+    text-align: center;
+    margin-top: 1em;
+}
+h1 {
+    font-weight: bold;
+    font-size: 36pt;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 16pt;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    background-color: #F2F5FA;
+}
+
+.image-footer-background {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#transfer-content {
+    margin-top: 4em;
+    margin-bottom: 3em;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 60px;
+    width: 90%;
+    height: 45rem;
+    box-shadow: 3px 3px 81px rgba(0, 0, 0, 0.1);
+
+}
+
+#transfer-content button {
+    margin-top: 1em;
+    background-color: #6FD1A0;
+    border: none;
+    color: #224957;
+    border-radius: 10px;
+    height: 2.75em;
+    width: 20%;
+    font-size: 12pt;
+}
+
+form input[type] {
+    color: #545454;
+    background: rgba(130, 145, 169, 0.11);
+    border-radius: 10px;
+    margin-top: 1em;
+    height: 2.75em;
+    border: none;
+}
+
+form input[type]::placeholder {
+    color:#545454;
+
+}
+
+form input[type] {
+    margin-top: 2em;
+    /*  width: 28em;*/
+    padding-left: 3em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image-footer-background {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.fa-user {
+    position: absolute;
+    margin-bottom: 2.75em;
+    margin-left: 1em;
+}
+
+.fa-lock {
+    position: absolute;
+    margin-top: 6.75em;
+    margin-left: 1em;
+}
+
+.form-check {
+    margin-top: 1.5em;
+}
+
+#acceptTermsLabel{
+    color: #093545;
+    font-size: 10pt;
+}
+
+#acceptTermsCheck {
+    background-color: rgba(34, 73, 87, 0.89);
+}
+
+#notworking-link {
+    margin-top: 1.5em;
+}
+
+#notworking-link a {
+    text-decoration: none;
+    color: #093545;
+    font-size: 10pt;
+}
+
+#form-login-features {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 6em;
+}
+
+.icon-focus-visible {
+    color: rgba(34, 73, 87, 0.89);
+}
+
+
+
+.Recipient{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.Name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Message{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.LowForm {
+    margin-top: 9px;
+}
+
+.grande{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+.chico1{
+    width: 45%;
+
+    float: left;
+}
+.chico2 {
+    width: 10%;
+}
+.chico3{
+    width: 45%;
+    float: left;
+}
+
+.arrow{
+    position: relative;
+    left: 8%;
+    top: 53%;
+}

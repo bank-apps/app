@@ -76,4 +76,36 @@ public class Bank {
         }
         return "El usuario o la contraseña son incorrectas";
     }
+    
+    public String transfer(BankAccount from, BankAccount to, Double amount) {
+        if (amount > from.getBalance()) {
+            return "No hay suficiente saldo";
+        }
+        
+        Double fromOldBalance = from.getBalance();
+        from.setBalance(from.getBalance() - amount);
+        
+        Double toOldBalance = to.getBalance();
+        to.setBalance(to.getBalance() + amount);
+        
+        try {
+            String fields = "iban,'account history'";
+            
+            // Add From Register (TABLE USER HISTORIES)
+            String fromHistory = "Old Balance -> " + fromOldBalance + " | New Balance -> " + from.getBalance();
+            String fromValues = "'" + from.getIBAN() + "','" + fromHistory + "'";
+            DataBaseManager.Insert("'user histories'", fields, fromValues);
+            DataBaseManager.UpdateWithIBAN("'bank accounts'", "'balance'", from.getBalance().toString(), from.getIBAN());
+            
+            // Add To Register (TABLE USER HISTORIES)
+            String toHistory = "Old Balance -> " + toOldBalance + " | New Balance -> " + to.getBalance();
+            String toValues = "'" + to.getIBAN() + "','" + toHistory + "'";
+            DataBaseManager.Insert("'user histories'", fields, toValues);
+            DataBaseManager.UpdateWithIBAN("'bank accounts'", "'balance'", to.getBalance().toString(), to.getIBAN());
+            
+            return "OK";
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+    }
 }
