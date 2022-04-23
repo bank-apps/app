@@ -98,11 +98,11 @@ public class Bank {
     public void issueCard(BankAccount account) throws Exception{
         Card card = new CreditCard(GenerateCardNumber());
         account.setCard(card);
-        DataBaseManager.Update("'BANK ACCOUNTS'", "'CARD NUMBER'", "'" + card.getId() + "'", "IBAN = '" + account.getIBAN() + "'");
+        DataBaseManager.Update("'bank accounts'", "'card number'", "'" + card.getId() + "'", "iban = '" + account.getIBAN() + "'");
         
     }
     
-    public void activateCard(Card card) throws Exception{
-        DataBaseManager.Update("'BANK ACCOUNTS'", "'CARD STATUS'", "1", "CARD NUMBER = '" + card.getId() + "'");
+    public void activateCard(BankAccount account) throws Exception{
+        DataBaseManager.Update("'bank accounts'", "'card status'", "'1'", "iban = '" + account.getIBAN() + "'");
     }
 }
