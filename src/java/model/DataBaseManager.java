@@ -7,16 +7,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-
 
 public class DataBaseManager {
-    
+
     private static String actualDB = "jdbc:sqlite:database.db";
-    
+
     static void createNewDatabase(String fileName) {
         String url = "jdbc:sqlite:" + fileName;
-        try (Connection conn = DriverManager.getConnection(url)) {
+        try ( Connection conn = DriverManager.getConnection(url)) {
             if (conn != null) {
                 DatabaseMetaData meta = conn.getMetaData();
                 actualDB = url;
@@ -26,8 +24,9 @@ public class DataBaseManager {
         }
     }
 
-    static Connection connect(){
+    static Connection connect() throws ClassNotFoundException {
         // Cadena de conexión SQLite
+        Class.forName("org.sqlite.JDBC");
         Connection conn = null;
         try {
             String url = actualDB;
@@ -37,26 +36,37 @@ public class DataBaseManager {
         }
         return conn;
     }
-    
+
     static void Insert(String table, String fields, String values) throws Exception {
         String sql = "INSERT INTO " + table + "(" + fields + ") VALUES(" + values + ")";
-        try (Connection conn = DataBaseManager.connect()){           
+        try ( Connection conn = DataBaseManager.connect()) {
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            throw new Exception(String.valueOf(e));
+            throw new Exception(e.getMessage());
         }
     }
     
-    static int SelectUserId(String dni){
+    static void Update(String table, String field, String value, String condition) throws Exception {
+        String sql = "UPDATE " + table + " set " + field + " = " + value + " WHERE " + condition;
+        
+        System.out.println(sql);
+        try ( Connection conn = DataBaseManager.connect()) {
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    static int SelectUserId(String dni) throws ClassNotFoundException {
         String sql = "SELECT id FROM USERS WHERE dni=" + dni;
-        try (Connection conn = connect()){
+        try ( Connection conn = connect()) {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             return rs.getInt("id");
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            return 0;
         }
-        return 0;
     }
 }

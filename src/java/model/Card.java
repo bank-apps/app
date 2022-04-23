@@ -2,13 +2,13 @@ package model;
 
 
 public abstract class Card {
-    private final int id;
+    private final String id;
 
-    public Card(int id) {
+    public Card(String id) {
         this.id = id;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 }
