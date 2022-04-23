@@ -6,6 +6,8 @@ package control;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -79,7 +81,11 @@ public class LoginServlet extends HttpServlet {
         command.init(getServletContext(), request, response);
         String dni = "'" + request.getParameter("dni") + "'";
         String password = request.getParameter("password");
-        command.process(dni, password);
+        try {
+            command.process(dni, password);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

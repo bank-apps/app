@@ -35,9 +35,14 @@ public class SignUpCommand {
     
     public void process(String firstname, String lastname, String dni, String email, String address, String phone, String password) throws ServletException, IOException, SQLException, ClassNotFoundException {
         UserData userData = new UserData(dni, password, firstname, lastname, email, address, phone);
-        Bank.register(userData);
-        forward("/jsp/dashboard.jsp");
-        
+        String registerMessage = Bank.register(userData);
+        System.out.println(registerMessage);
+        if (registerMessage.equals("OK")) {
+            forward("/jsp/dashboard.jsp");
+        }
+        else {
+            forward("/jsp/failedsignup.jsp");
+        }
     }
     
     protected void forward(String target) throws ServletException, IOException {

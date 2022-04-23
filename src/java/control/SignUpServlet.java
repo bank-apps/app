@@ -16,6 +16,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import model.UserAccount;
+import model.UserData;
 
 /**
  *
@@ -92,10 +95,15 @@ public class SignUpServlet extends HttpServlet {
         if (request.getParameter("second-slide").equals("y")) {
             
             try {
-                String address = "'" + request.getParameter("address") + "'";
-                String phone = "'" + request.getParameter("phone") + "'";
-                String password = "'" + request.getParameter("password") + "'";
-                command.process(firstname, lastname, dni, email, address, phone, password);
+                String address = request.getParameter("address");
+                String phone = request.getParameter("phone");
+                String password = request.getParameter("password");
+                HttpSession session = request.getSession(true);
+                UserData userData = new UserData(dni, password, firstname, lastname, email, address, phone);
+                UserAccount userAccount = new UserAccount(userData);
+                session.setAttribute("user", userAccount);
+                command.process("'" + firstname + "'", "'" + lastname + "'", "'" + dni + "'",
+                        "'" + email + "'", "'" + address + "'", "'" + phone + "'", "'" + password + "'");
             } catch (SQLException ex) {
                 Logger.getLogger(SignUpServlet.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ClassNotFoundException ex) {
@@ -103,14 +111,12 @@ public class SignUpServlet extends HttpServlet {
             }
         }
         else if (request.getParameter("second-slide").equals("n")) {
-            firstname = "'" + request.getParameter("firstname") + "'";
-            lastname = "'" + request.getParameter("lastname") + "'";
-            dni = "'" + request.getParameter("dni") + "'";
-            email = "'" + request.getParameter("email") + "'";
+            firstname = request.getParameter("firstname");
+            lastname = request.getParameter("lastname");
+            dni = request.getParameter("dni");
+            email = request.getParameter("email");
             command.processFirstSlide();
-            
         }
-        
     }
 
     /**

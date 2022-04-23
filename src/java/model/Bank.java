@@ -54,7 +54,7 @@ public class Bank {
             fields = "iban";
             values = "'" + IBAN + "'";
 
-            DataBaseManager.Insert("'user histories'", fields, values);  
+            DataBaseManager.Insert("'user histories'", fields, values);
             return "OK";
         }catch(Exception e){
             return e.getMessage();
