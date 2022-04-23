@@ -27,13 +27,14 @@
             <h2>Pay anyone, anywhere</h2>
         </div>
 
-        <div class="LowForm">
-            <form id="form-login" action="#" class="was-validated">
+
+        <form id="form-login" action="#" class="was-validated">
+            <div class="LowForm">
                 <div class="grande">
                     <div class="chico1"><label for="quantity"></label><input onkeyup="getVal()" type="currency" required class="input-sign-in form-control" name="quantity" id="quantity" placeholder="1500$ " onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')"></div>
                     <div class="chico2">
                         <div class="arrow">
-                            <i class="fa-solid fa-circle-arrow-right fa-3x"></i>
+                            <i class="fa-solid fa-circle-arrow-right fa-2x"></i>
                         </div>
                     </div>
                     <div class="chico3"><label for="result"></label><input disabled type="number" required class="input-sign-in form-control" name="result" id="result" placeholder="1500$ " onfocus="changeIconColorFocus('fa-user')"></div>
@@ -41,31 +42,31 @@
 
 
                 <div class="Recipient">
-                    <label for="recipient"></label><input type="text" required class="input-sign-in form-control" name="recipient" id="recipient" placeholder="IBAN ES66 0019 0020 9612 3456 7890" onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')">
+                    <label for="recipient"></label><input type="text" required class="input-sign-in form-control" name="recipient" id="recipient" placeholder="Recipient's IBAN (ES66 0019 0020 9612 3456 7890)" onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')">
                 </div>
 
                 <div class="Name">
-                    <label for="name"></label><input type="text" required class="input-sign-in form-control" name="firstname" id="name" placeholder="Your firstname and lastname" onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')">
+                    <label for="name"></label><input type="text" required class="input-sign-in form-control" name="firstname" id="name" placeholder="Recipient's firstname and lastname" onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')">
                 </div>
 
                 <div class="Message">
                     <label for="message"></label><input type="text" required class="input-sign-in form-control" name="message" id="message" placeholder="Place here the concept of the transfer" onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')">
                 </div>
-            </form>
-        </div>
+            </div>
 
-        <div id="form-login-features">
-            <div class="form-check">
-                <label for="acceptTermsLabel" id="acceptTermsLabel">
-                    I accept the terms and confirm the data provided is valid
-                </label>
-                <input class="form-check-input" type="checkbox" value="" id="acceptTermsCheck">
+            <div id="form-login-features">
+                <div class="form-check">
+                    <label for="acceptTermsLabel" id="acceptTermsLabel">
+                        I accept the terms and confirm the data provided is valid
+                    </label>
+                    <label for="acceptTermsCheck"></label><input class="form-check-input" type="checkbox" value="" id="acceptTermsCheck">
+                </div>
+                <div id="notworking-link">
+                    <a href="../html/helpPage">Not working?</a>
+                </div>
             </div>
-            <div id="notworking-link">
-                <a href="../html/helpPage">Not working?</a>
-            </div>
-        </div>
-        <button type="submit" value="Login">Confirm Transfer</button>
+            <button type="submit" value="Login">Confirm Transfer</button>
+        </form>
     </div>
 </main>
 

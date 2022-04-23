@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Fixed sidebar">
-      <change afterPath="$PROJECT_DIR$/web/css/transfer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/html/transfer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/js/requieredCheckbox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/js/transfer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/transfer.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/transfer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/html/transfer.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/transfer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,13 +22,6 @@
   </component>
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="nahima" />
-  </component>
-  <component name="Git.Pull.Settings">
-    <option name="OPTIONS">
-      <set>
-        <option value="FF_ONLY" />
-      </set>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
