@@ -28,8 +28,7 @@
             <h2>Pay anyone, anywhere</h2>
         </div>
 
-        
-        <form id="form-login" action="#" class="was-validated">
+        <form id="form-login" action="${pageContext.request.contextPath}/TransferServlet" method="post" class="was-validated">
             <div class="LowForm">
                 <div class="grande">
                     <div class="chico1"><label for="quantity"></label><input onkeyup="getVal()" type="currency" required class="input-sign-in form-control" name="quantity" id="quantity" placeholder="1500$ " onfocus="changeIconColorFocus('fa-user')" onfocusout="changeIconColorFocusOut('fa-user')"></div>

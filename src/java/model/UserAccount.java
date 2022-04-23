@@ -3,7 +3,6 @@ package model;
 import java.util.ArrayList;
 
 public class UserAccount {
-    
     private UserData userData;
     private ArrayList<BankAccount> bankAccounts;
 
