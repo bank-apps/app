@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Upgrades Transfer">
-      <change afterPath="$PROJECT_DIR$/jquery-3.6.0.js" afterDir="false" />
+    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Added Transfer">
+      <change afterPath="$PROJECT_DIR$/web/css/prueba.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/html/prueba.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/prueba.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/transfer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_01_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_01_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_01_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_01_PM__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_03_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_03_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_05_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_05_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_22_2022_8_22_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_22_2022_8_22_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery-3.6.0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/transfer.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/transfer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/html/transfer.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/transfer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/html/transferClone.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/transferClone.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +25,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
