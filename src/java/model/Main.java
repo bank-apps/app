@@ -9,8 +9,8 @@ public class Main {
         System.out.println(bank.register(userData));
         */
         BankAccount from = new BankAccount("ES6776491637244626513871");
-        from.setBalance(300.);
+        from.setBalance(50.);
         BankAccount to = new BankAccount("ES9176491637335373685119");
-        System.out.println(bank.transfer(from, to, 250.));
+        System.out.println(bank.transfer(from, to, 15.));
     }
 }

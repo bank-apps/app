@@ -73,13 +73,15 @@ public class Bank {
             String fields = "iban,'account history'";
             
             // Add From Register (TABLE USER HISTORIES)
-            String fromHistory = "Old Balance -> " + fromOldBalance + " | New Balance -> " + from.getBalance();
+            String fromHistory = "To -> " + to.getIBAN() + " (-" + amount + ")" + " | Old Balance -> " + fromOldBalance 
+                    + " | New Balance -> " + from.getBalance();
             String fromValues = "'" + from.getIBAN() + "','" + fromHistory + "'";
             DataBaseManager.Insert("'user histories'", fields, fromValues);
             DataBaseManager.UpdateWithIBAN("'bank accounts'", "'balance'", from.getBalance().toString(), from.getIBAN());
             
             // Add To Register (TABLE USER HISTORIES)
-            String toHistory = "Old Balance -> " + toOldBalance + " | New Balance -> " + to.getBalance();
+            String toHistory = "From -> " + from.getIBAN() + " (+" + amount + ")" + " | Old Balance -> " + toOldBalance 
+                    + " | New Balance -> " + to.getBalance();            
             String toValues = "'" + to.getIBAN() + "','" + toHistory + "'";
             DataBaseManager.Insert("'user histories'", fields, toValues);
             DataBaseManager.UpdateWithIBAN("'bank accounts'", "'balance'", to.getBalance().toString(), to.getIBAN());
