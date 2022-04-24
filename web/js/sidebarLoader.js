@@ -1,3 +1,3 @@
 $(function(){
-    $("#sidebarLoaded").load("../html/sidebar.html");
+    $("#sidebarLoaded").load("${pageContext.request.contextPath}/web/html/sidebar.html");
 });
