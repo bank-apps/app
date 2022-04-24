@@ -98,14 +98,40 @@ public class Bank {
         
     }
     
-    public void issueCard(BankAccount account) throws Exception{
-        Card card = new CreditCard(GenerateCardNumber());
-        account.setCard(card);
-        DataBaseManager.Update("'bank accounts'", "'card number'", "'" + card.getId() + "'", "iban = '" + account.getIBAN() + "'");
+    public String issueCard(BankAccount account) throws Exception{
+        try{
+            Card card = new CreditCard(GenerateCardNumber());
+            account.setCard(card);
+            DataBaseManager.Update("'bank accounts'", "'card number'", "'" + card.getId() + "'", "iban = '" + account.getIBAN() + "'");
+            return "OK";
+        }catch(Exception e){
+            return e.getMessage();
+        }  
+    }
+    
+    public String activateCard(BankAccount account) throws Exception{
+        try{
+            DataBaseManager.Update("'bank accounts'", "'card status'", "'1'", "iban = '" + account.getIBAN() + "'");
+            return "OK";
+        }catch(Exception e){
+            return e.getMessage();
+        }
         
     }
     
-    public void activateCard(BankAccount account) throws Exception{
-        DataBaseManager.Update("'bank accounts'", "'card status'", "'1'", "iban = '" + account.getIBAN() + "'");
+    public String modifyUserData(UserData data) throws Exception {
+        try{
+            int userId = DataBaseManager.SelectUserId(data.getDNI());
+
+            DataBaseManager.Update("users", "password", data.getPassword(), "id = " + userId);
+            DataBaseManager.Update("users", "name", data.getName(), "id = " + userId);
+            DataBaseManager.Update("users", "surnames", data.getSurnames(), "id = " + userId);
+            DataBaseManager.Update("users", "email", data.getEmail(), "id = " + userId);
+            DataBaseManager.Update("users", "address", data.getAddress(), "id = " + userId);
+            DataBaseManager.Update("users", "'phone number'", data.getPhoneNumber(), "id = " + userId);
+            return "OK";
+        }catch(Exception e){
+            return e.getMessage();
+        }
     }
 }
