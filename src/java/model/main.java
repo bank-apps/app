@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.SQLException;
+import org.json.simple.JSONArray;
 
 
 public class main {
@@ -13,6 +14,12 @@ public class main {
         System.out.println(bank.register(data));
         
         System.out.println("Testing Login:");
-        System.out.println(bank.login("'311113411E'", "12333"));
+        System.out.println(bank.login("'111113411E'", "12333"));
+        
+        // TEST TO GET TRANSACTIONS AS JSONARRAY
+        System.out.println("Testing Transactions:");
+        JSONArray JSONtransactions = 
+                bank.getTransactions("ES6776491637244626513871");
+        System.out.println(JSONtransactions.toJSONString());
     }
 }
