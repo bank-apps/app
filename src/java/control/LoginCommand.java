@@ -28,7 +28,8 @@ public class LoginCommand {
     }
     
     public void process(String dni, String password) throws ServletException, IOException, ClassNotFoundException {
-        String loginResult = Bank.login(dni, password);
+        Bank bank = new Bank();
+        String loginResult = bank.login(dni, password);
         if (loginResult.equals("OK")) {
             HttpSession session = request.getSession(true);
             UserData userData = DataBaseManager.SelectUserByDNI(dni);
