@@ -5,9 +5,12 @@ import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 
 public class DataBaseManager {
@@ -70,6 +73,40 @@ public class DataBaseManager {
         } catch (SQLException e) {
             throw new Exception(String.valueOf(e));
         }
+    }
+
+    static JSONArray getRecords(String table, String field, String value,
+            ArrayList<String> fields) throws Exception {
+        String sql = "SELECT ";
+        for (int f = 0; f < fields.size() - 1; f++) {
+            sql += "\"" + fields.get(f) + "\", ";
+        }
+        sql += "\"" + fields.get(fields.size() - 1) + "\"";
+        sql += " FROM " + "'" + table + "'" + " WHERE " + "\"" + field + "\""
+                + " = " + "'" + value + "'";
+        try (Connection conn = connect()){
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            JSONArray JSONdata = resultSetToJSON(rs);
+            return JSONdata;
+        } catch (SQLException e) {
+            throw new Exception(String.valueOf(e));
+        }
+    }
+    
+    static JSONArray resultSetToJSON(ResultSet rs) throws Exception {
+        JSONArray JSONarray = new JSONArray();
+        ResultSetMetaData rsmd = rs.getMetaData();
+        while(rs.next()) {
+            int numColumns = rsmd.getColumnCount();
+            JSONObject JSONobj = new JSONObject();
+            for (int i=1; i<=numColumns; i++) {
+              String name = rsmd.getColumnName(i);
+              JSONobj.put(name, rs.getObject(name));
+            }
+            JSONarray.add(JSONobj);
+        }
+        return JSONarray;
     }
     
     public static UserData SelectUserByDNI(String dni) throws ClassNotFoundException {

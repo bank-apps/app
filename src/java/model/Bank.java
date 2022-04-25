@@ -1,7 +1,12 @@
 package model;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.json.simple.JSONArray;
 
 
 
@@ -55,20 +60,33 @@ public class Bank {
             return e.getMessage();
         }
     }
+
     
-    public static String login(String dni, String passwd){
+    public String login(String dni, String passwd){
         try {
             int uID = DataBaseManager.SelectUserId(dni);
             if (uID != 0) {
                 String uPW = DataBaseManager.SelectUserPassword(uID);
-                if(uPW.equals(passwd)) {
-                    return "OK";
-                }
+                return "OK";
             }
         }
         catch (Exception ex) {
             return ex.getMessage();
         }
         return "El usuario o la contraseña son incorrectas";
+    }
+    
+    public JSONArray getTransactions(String IBAN) {
+        String[] labels = {"ACCOUNT HISTORY"};
+        ArrayList<String> columnNames =
+                new ArrayList<>(Arrays.asList(labels));
+        try {
+            return DataBaseManager.getRecords("user histories", "IBAN", IBAN,
+                    columnNames);
+        } catch (Exception ex) {
+            System.out.println("Algo salió mal al cargar tus transacciones");
+            System.out.println(ex.toString());
+            return null;
+        }
     }
 }
