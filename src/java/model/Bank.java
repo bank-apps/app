@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Bank {
 
-    public Bank() {
+    public Bank() throws ClassNotFoundException {
         DataBaseManager.connect();
     }
 
@@ -56,9 +56,19 @@ public class Bank {
         }
     }
     
-    public void login(String dni, String passwd){
-        
+    public static String login(String dni, String passwd){
+        try {
+            int uID = DataBaseManager.SelectUserId(dni);
+            if (uID != 0) {
+                String uPW = DataBaseManager.SelectUserPassword(uID);
+                if(uPW.equals(passwd)) {
+                    return "OK";
+                }
+            }
+        }
+        catch (Exception ex) {
+            return ex.getMessage();
+        }
+        return "El usuario o la contraseña son incorrectas";
     }
-    
-    
 }

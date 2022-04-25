@@ -26,8 +26,9 @@ public class DataBaseManager {
         }
     }
 
-    static Connection connect(){
+    static Connection connect() throws ClassNotFoundException{
         // Cadena de conexión SQLite
+        Class.forName("org.sqlite.JDBC");
         Connection conn = null;
         try {
             String url = actualDB;
@@ -48,7 +49,7 @@ public class DataBaseManager {
         }
     }
     
-    static int SelectUserId(String dni){
+    static int SelectUserId(String dni) throws ClassNotFoundException{
         String sql = "SELECT id FROM USERS WHERE dni=" + dni;
         try (Connection conn = connect()){
             Statement stmt = conn.createStatement();
@@ -58,5 +59,30 @@ public class DataBaseManager {
             System.out.println(e.getMessage());
         }
         return 0;
+    }
+    
+    static String SelectUserPassword(int id) throws Exception{
+        String sql = "SELECT password FROM USERS WHERE id=" + id;
+        try (Connection conn = connect()){
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            return rs.getString("password");
+        } catch (SQLException e) {
+            throw new Exception(String.valueOf(e));
+        }
+    }
+    
+    public static UserData SelectUserByDNI(String dni) throws ClassNotFoundException {
+        String sql = "SELECT * FROM USERS WHERE dni=" + dni;
+        try (Connection conn = connect()){
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            UserData userData = new UserData(rs.getString("dni"), rs.getString("password"), rs.getString("name"),
+            rs.getString("surnames"), rs.getString("email"), rs.getString("address"), rs.getString("phone number"));
+            return userData;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 }
