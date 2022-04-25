@@ -81,8 +81,11 @@ public class DataBaseManager {
             sql += "\"" + fields.get(f) + "\", ";
         }
         sql += "\"" + fields.get(fields.size() - 1) + "\"";
-        sql += " FROM " + "'" + table + "'" + " WHERE " + "\"" + field + "\""
-                + " = " + "'" + value + "'";
+        sql += " FROM " + "'" + table + "'";
+        if (field != null) {
+            sql += " WHERE " + "\"" + field + "\"" + " = "
+                    + "'" + value + "'";
+        }
         try (Connection conn = connect()){
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
