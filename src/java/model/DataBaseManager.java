@@ -78,10 +78,10 @@ public class DataBaseManager {
             ArrayList<String> fields) throws Exception {
         String sql = "SELECT ";
         for (int f = 0; f < fields.size() - 1; f++) {
-            sql += "'" + fields.get(f) + "', ";
+            sql += "\"" + fields.get(f) + "\", ";
         }
-        sql += "'" + fields.get(fields.size() - 1) + "'";
-        sql += " FROM " + "'" + table + "'" + " WHERE " + "'" + field + "'"
+        sql += "\"" + fields.get(fields.size() - 1) + "\"";
+        sql += " FROM " + "'" + table + "'" + " WHERE " + "\"" + field + "\""
                 + " = " + "'" + value + "'";
         try (Connection conn = connect()){
             Statement stmt = conn.createStatement();

@@ -79,11 +79,11 @@ public class Bank {
     
     
     public JSONArray getTransactions(String IBAN) {
-        String[] labels = {"IBAN", "ACCOUNT HISTORY"};
+        String[] labels = {"ACCOUNT HISTORY"};
         ArrayList<String> columnNames =
                 new ArrayList<>(Arrays.asList(labels));
         try {
-            return DataBaseManager.getRecords("bank accounts", "IBAN", IBAN,
+            return DataBaseManager.getRecords("user histories", "IBAN", IBAN,
                     columnNames);
         } catch (Exception ex) {
             System.out.println("Algo salió mal al cargar tus transacciones");

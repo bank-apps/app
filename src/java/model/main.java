@@ -20,6 +20,7 @@ public class main {
         System.out.println("Testing Transactions:");
         JSONArray JSONtransactions = 
                 bank.getTransactions("ES6776491637244626513871");
+        System.out.println("Result of getting transactions:");
         System.out.println(JSONtransactions.toJSONString());
     }
 }
