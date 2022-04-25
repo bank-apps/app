@@ -101,8 +101,9 @@ form input[type]::placeholder {
     color: #224957;
     border-radius: 10px;
     height: 2.75em;
-    width: 80%;
+    width: 95%;
     font-size: 12pt;
+    margin-left: 0.75em;
 }
 
 #signup2-content button {

@@ -1,0 +1,23 @@
+h1 {
+    margin-top: 0.75em;
+}
+
+h2 {
+    margin-top: 0.5em;
+}
+
+.input-name input[type] {
+    margin-top: 0.25em;
+}
+
+div#signup-error-message {
+    background-color: #FEDCE0;
+    color: #871A21;
+    border-radius: 0.5em;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5em;
+    padding: 0.5em;
+}
