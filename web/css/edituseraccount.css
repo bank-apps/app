@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+h1 {
+    font-family: "Poppins", monospace;
+    color: #545454;
+    font-weight: 600;
+    font-size: 16pt;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-family: "Poppins", monospace;
+    color: #545454;
+    font-weight: 600;
+    font-size: 13pt;
+    margin-bottom: 0;
+}
+
+#page-title {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+    align-items: center;
+    margin-top: 3.5em;
+    position: relative;
+    left: 4.5em;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.fa-circle-user {
+    color: #3A5D69;
+}
+
+#edit-user-content {
+    margin-top: 4em;
+    margin-bottom: 3em;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 60px;
+    width: 90%;
+    height: 45rem;
+    box-shadow: 3px 3px 81px rgba(0, 0, 0, 0.1);
+}
+
+.data-row {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1.5em;
+    gap: 2em;
+}
+
+#lastname-display, #name-display, #dni-display, #email-display, #phone-display, #address-display {
+    background-color: rgba(34, 73, 87, 0.89);
+    width: 30rem;
+    height: 3em;
+    border-radius: 0.5em;
+    color: white;
+}
+
+#password-display, #repeat-password-display {
+    background-color: rgba(34, 73, 87, 0.89);
+    width: 30rem;
+    height: 3em;
+    border-radius: 0.5em;
+    color: white;
+}
+
+input[type="text"]::placeholder {
+    color: white;
+    font-family: "Lexend Deca", monospace;
+    font-weight: 300;
+    font-size: 11pt;
+}
+
+.data-row label {
+    margin-bottom: 0.5em;
+    font-size: 8pt;
+    text-transform: uppercase;
+    font-family: "Lexend Deca", monospace;
+    color: #224957;
+}
+
+#change-password-title {
+    margin-top: 3.5em;
+    position: relative;
+    left: 0;
+    width: 100%;
+}
+
+button {
+    margin-top: 2.5em;
+    background-color: #F65043;
+    border: none;
+    border-radius: 10px;
+    width: 50%;
+    font-size: 12pt;
+    color: white;
+    height: 3em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#error-message {
+    background-color: #FEDCE0;
+    color: #871A21;
+    border-radius: 0.5em;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5em;
+    padding: 0.5em;
+}

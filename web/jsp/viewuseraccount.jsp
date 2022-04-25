@@ -28,7 +28,7 @@
         </div>
         <div id="icons">
             <i class="fa-regular fa-circle-user fa-7x"></i>
-            <button onclick="window.location.href='${pageContext.request.contextPath}/jsp/edituseraccout.jsp'">
+            <button onclick="window.location.href='${pageContext.request.contextPath}/jsp/edituseraccount.jsp'">
                 <i class="fa-solid fa-pen fa-lg"></i>
             </button>
         </div>

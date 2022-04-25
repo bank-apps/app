@@ -1,3 +1,4 @@
 $(function(){
-    $("#sidebarLoaded").load("${pageContext.request.contextPath}/web/html/sidebar.html");
+    $("#sidebarLoaded").load("/app/html/sidebar.html");
 });
+
