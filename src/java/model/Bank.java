@@ -140,14 +140,14 @@ public class Bank {
     
     public String modifyUserData(UserData data) throws Exception {
         try{
-            int userId = DataBaseManager.SelectUserId(data.getDNI());
+            int userId = DataBaseManager.SelectUserId("'" + data.getDNI() + "'");
 
-            DataBaseManager.Update("users", "password", data.getPassword(), "id = " + userId);
-            DataBaseManager.Update("users", "name", data.getName(), "id = " + userId);
-            DataBaseManager.Update("users", "surnames", data.getSurnames(), "id = " + userId);
-            DataBaseManager.Update("users", "email", data.getEmail(), "id = " + userId);
-            DataBaseManager.Update("users", "address", data.getAddress(), "id = " + userId);
-            DataBaseManager.Update("users", "'phone number'", data.getPhoneNumber(), "id = " + userId);
+            DataBaseManager.Update("users", "password", "'" + data.getPassword() + "'", "id = " + userId);
+            DataBaseManager.Update("users", "name", "'" + data.getName() + "'", "id = " + userId);
+            DataBaseManager.Update("users", "surnames", "'" + data.getSurnames() + "'", "id = " + userId);
+            DataBaseManager.Update("users", "email", "'" + data.getEmail() + "'", "id = " + userId);
+            DataBaseManager.Update("users", "address", "'" + data.getAddress() + "'", "id = " + userId);
+            DataBaseManager.Update("users", "'phone number'", "'" + data.getPhoneNumber() + "'", "id = " + userId);
             return "OK";
         }catch(Exception e){
             return e.getMessage();

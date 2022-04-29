@@ -51,7 +51,6 @@ public class EditUserAccountCommand {
         session.setAttribute("user", userAccount);
         try {
             bank.modifyUserData(userData);
-            System.out.println(userData.getName());
             forward("/jsp/viewuseraccount.jsp");
         } catch (Exception e) {
             forward("/jsp/failededituseraccount.jsp");
