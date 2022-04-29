@@ -39,14 +39,13 @@ public class Bank {
     public String register(UserData userData) throws ClassNotFoundException {    
         int id = DataBaseManager.SelectUserId(userData.getDNI());
 
-        if(id != 0){
+        if(id != 0) {
             return "Este usuario ya existe";
         }
-        try{
+        try {
             // Table USERS
             String fields = "dni,password,name,surnames,email,address,'phone number'";
-            String values = String.join(", ", userData.getArrayData());
-
+            String values = String.join(",", userData.getArrayData());
             DataBaseManager.Insert("users", fields, values);
 
             // Table BANK ACCOUNTS
@@ -59,10 +58,10 @@ public class Bank {
             // Table USER HISTORIES
             fields = "iban";
             values = "'" + IBAN + "'";
-
-            DataBaseManager.Insert("'user histories'", fields, values);
+            DataBaseManager.Insert("'user histories'", fields, values); 
+             
             return "OK";
-        }catch(Exception e){
+        } catch(Exception e) {
             return e.getMessage();
         }
     }
@@ -114,7 +113,6 @@ public class Bank {
         } catch (Exception e) {
             return e.getMessage();
         }
-        
     }
     
     public String issueCard(BankAccount account) throws Exception{
@@ -153,6 +151,7 @@ public class Bank {
             return e.getMessage();
         }
     }
+    
     public JSONArray getTransactions(String IBAN) {
         String[] labels = {"ACCOUNT HISTORY"};
         ArrayList<String> columnNames =
