@@ -1,10 +1,9 @@
 package model;
 
+import static java.lang.Thread.State.values;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.json.simple.JSONArray;
 
 public class Bank {
@@ -71,7 +70,7 @@ public class Bank {
             int uID = DataBaseManager.SelectUserId(dni);
             if (uID != 0) {
                 String uPW = DataBaseManager.SelectUserPassword(uID);
-                return "OK";
+                CollectMaintenance(new UserAccount(DataBaseManager.SelectUserByDNI(dni)));
             }
         }
         catch (Exception ex) {
@@ -127,6 +126,7 @@ public class Bank {
     
     public String activateCard(BankAccount account) throws Exception{
         try{
+            account.maintenence += 0.5f;
             DataBaseManager.Update("'bank accounts'", "'card status'", "'1'", "iban = '" + account.getIBAN() + "'");
             return "OK";
         }catch(Exception e){
@@ -162,5 +162,21 @@ public class Bank {
             System.out.println(ex.toString());
             return null;
         }
+    }
+    
+    private void CollectMaintenance(UserAccount account){
+        for (BankAccount bankAccount : account.getBankAccounts()) {
+            bankAccount.setBalance(bankAccount.getBalance() - bankAccount.maintenence);
+            
+        }
+    }
+    
+    public void AddBankAccount(UserAccount account) throws ClassNotFoundException, Exception{
+        account.addBankAccount(new BankAccount(GenerateIBAN()));
+        String IBAN = GenerateIBAN();
+        String fields = "iban,'owner id'";
+        int owner_id = DataBaseManager.SelectUserId(account.getData().getDNI());
+        String values = "'" + IBAN + "'," + owner_id;
+        DataBaseManager.Insert("'bank accounts'", fields, values);
     }
 }
