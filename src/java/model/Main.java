@@ -10,7 +10,11 @@ public class Main {
         BankAccount from = new BankAccount("ES83764916374817124 1702");
         BankAccount to = new BankAccount("ES477649163779 581120922");
         from.setBalance(50.);
-        System.out.println(bank.transfer(from, to, 20.));
-        System.out.println(bank.transfer(from, to, 10.));
+        to.setBalance(50.);
+        System.out.println(bank.transfer(from, to, "Fernando", 25., "Concepto de Prueba"));
+        System.out.println(bank.transfer(from, to, "Fernando", 5., "Otro Concepto de Prueba"));
+        
+        System.out.println(bank.transfer(to, from, "Mario", 2., "Concepto de Prueba"));
+        System.out.println(bank.transfer(to, from, "Mario", 10., "Otro Concepto de Prueba"));
     }
 }

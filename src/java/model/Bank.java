@@ -43,11 +43,12 @@ public class Bank {
             values = "'" + IBAN + "'," + owner_id;
             DataBaseManager.Insert("'bank accounts'", fields, values);
 
+            /*
             // Table USER HISTORIES
             fields = "iban";
             values = "'" + IBAN + "'";
             DataBaseManager.Insert("'user histories'", fields, values); 
-             
+            */ 
             return "OK";
         } catch(Exception e) {
             return e.getMessage();
@@ -73,42 +74,25 @@ public class Bank {
         return name;
     }
     
-    public String transfer(BankAccount from, BankAccount to, Double amount) {
+    public String transfer(BankAccount from, BankAccount to, String recipient, Double amount, String concept) {
         if (amount > from.getBalance()) {
             return "No hay suficiente saldo";
         }
         from.setBalance(from.getBalance() - amount);
         to.setBalance(to.getBalance() + amount);
         try {
-            // Add From Register (TABLE USER HISTORIES)
-            String fromHistory = "iban:" + to.getIBAN() + "," +
-                                 "name:" + getUserName(to.getIBAN()) + "," +
-                                 "amount:-" + amount + "," +
-                                 "date:" + getActualDate();
-            
-            String oldFromHistory = DataBaseManager.SelectAccountHistory(from.getIBAN());
-            if (oldFromHistory != null) {
-                DataBaseManager.Update("'user histories'", "'account history'", "'" + fromHistory + " | " + oldFromHistory + "'", "iban = '" + from.getIBAN() + "'");
-            } else {
-                DataBaseManager.Update("'user histories'", "'account history'", "'" + fromHistory + "'", "iban = '" + from.getIBAN() + "'");
-            } 
+            String fields = "'from iban','to iban','recipient','amount','concept','date'";
+            String values = "'" + from.getIBAN() + "'" + "," +
+                            "'" + to.getIBAN() + "'" + "," + 
+                            "'" + recipient + "'" + "," + 
+                            "'" + amount + "'" + "," + 
+                            "'" + concept + "'" + "," +
+                            "'" + getActualDate() + "'";
+                            
+            DataBaseManager.Insert("'user histories'", fields, values);
             DataBaseManager.Update("'bank accounts'", "'balance'", from.getBalance().toString(), "iban = '" + from.getIBAN() + "'");
+            DataBaseManager.Update("'bank accounts'", "'balance'", to.getBalance().toString(), "iban = '" + to.getIBAN() + "'");
             
-            
-             // Add To Register (TABLE USER HISTORIES)
-            String toHistory =  "iban:" + from.getIBAN() + "," +
-                                 "name:" + getUserName(from.getIBAN()) + "," +
-                                 "amount:+" + amount + "," +
-                                 "date:" + getActualDate();           
-            
-            String oldToHistory = DataBaseManager.SelectAccountHistory(to.getIBAN());
-            if (oldToHistory != null) {
-                DataBaseManager.Update("'user histories'", "'account history'", "'" + toHistory + " | " + oldToHistory + "'", "iban = '" + to.getIBAN() + "'");
-            } else {
-                DataBaseManager.Update("'user histories'", "'account history'", "'" + toHistory + "'", "iban = '" + to.getIBAN() + "'");
-            }            
-            DataBaseManager.Update("'bank accounts'", "'balance'", to.getBalance().toString(), "iban ='" + to.getIBAN() + "'");
-           
             return "OK";
         } catch (Exception e) {
             System.out.println("transfer: " + e.getMessage());
