@@ -9,6 +9,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Iterator;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -128,6 +129,24 @@ public class DataBaseManager {
             UserData userData = new UserData(rs.getString("dni"), rs.getString("password"), rs.getString("name"),
             rs.getString("surnames"), rs.getString("email"), rs.getString("address"), rs.getString("phone number"));
             return userData;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+    
+    public static ArrayList<BankAccount> SelectBankAccounts(UserAccount account) throws ClassNotFoundException{
+        String sql = "SELECT * FROM 'BANK ACCOUNTS' WHERE \"OWNER ID\"=" + DataBaseManager.SelectUserId("'" + account.getData().getDNI() + "'");
+        try (Connection conn = connect()){
+            ArrayList<BankAccount> bankAccounts = new ArrayList<>();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while(rs.next()){
+                BankAccount bankAccount = new BankAccount(rs.getString("IBAN"));
+                bankAccount.setBalance(Double.valueOf(rs.getString("BALANCE")));
+                bankAccounts.add(bankAccount);
+            }
+            return bankAccounts;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

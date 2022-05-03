@@ -11,6 +11,10 @@ public class UserAccount {
         this.bankAccounts = new ArrayList<>();
     }
 
+    public void setBankAccounts(ArrayList<BankAccount> bankAccounts) {
+        this.bankAccounts = bankAccounts;
+    }
+
     public UserData getData() {
         return userData;
     }

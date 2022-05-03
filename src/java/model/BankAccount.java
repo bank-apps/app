@@ -6,7 +6,7 @@ public class BankAccount {
     private final String IBAN;
     private Double balance;
     private Card card;
-    public float maintenence = 1.f;
+    public double maintenence = 1.f;
 
     public BankAccount(String IBAN) {
         this.IBAN = IBAN;
