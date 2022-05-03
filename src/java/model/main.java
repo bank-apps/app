@@ -17,10 +17,10 @@ public class main {
         System.out.println(bank.login("'111113411E'", "12333"));
         
         // TEST TO GET TRANSACTIONS AS JSONARRAY
-        System.out.println("Testing Transactions:");
-        JSONArray JSONtransactions = 
-                bank.getTransactions("ES6776491637244626513871");
+        System.out.println("Test to get Transactions:");
+        String JSONtransactions = 
+                bank.getTransactions("ES477649163779 581120922");
         System.out.println("Result of getting transactions:");
-        System.out.println(JSONtransactions.toJSONString());
+        System.out.println(JSONtransactions);
     }
 }

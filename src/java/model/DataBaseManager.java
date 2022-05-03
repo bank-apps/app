@@ -51,6 +51,16 @@ public class DataBaseManager {
         }
     }
     
+    static void UpdateWithIBAN(String table, String field, String value, String IBAN) throws Exception {
+        String sql = "UPDATE " + table + " set " + field + " = '" + value + "' WHERE iban = '" + IBAN + "'";
+        try ( Connection conn = DataBaseManager.connect()) {
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+    
     static int SelectUserId(String dni){
         String sql = "SELECT id FROM USERS WHERE dni=" + dni;
         try (Connection conn = connect()){
@@ -74,8 +84,8 @@ public class DataBaseManager {
         }
     }
 
-    static JSONArray getRecords(String table, String field, String value,
-            ArrayList<String> fields) throws Exception {
+    static String getTransferRecords(String table, String field,
+            String value, ArrayList<String> fields) throws Exception {
         String sql = "SELECT ";
         for (int f = 0; f < fields.size() - 1; f++) {
             sql += "\"" + fields.get(f) + "\", ";
@@ -86,28 +96,32 @@ public class DataBaseManager {
             sql += " WHERE " + "\"" + field + "\"" + " = "
                     + "'" + value + "'";
         }
+        System.out.println(sql);
         try (Connection conn = connect()){
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
-            JSONArray JSONdata = resultSetToJSON(rs);
-            return JSONdata;
+            JSONArray JSONdata = transferResultSetToJSON(rs);
+            return rs.toString();
         } catch (SQLException e) {
             throw new Exception(String.valueOf(e));
         }
     }
     
-    static JSONArray resultSetToJSON(ResultSet rs) throws Exception {
+    static JSONArray transferResultSetToJSON(ResultSet rs) throws Exception {
         JSONArray JSONarray = new JSONArray();
         ResultSetMetaData rsmd = rs.getMetaData();
         while(rs.next()) {
             int numColumns = rsmd.getColumnCount();
             JSONObject JSONobj = new JSONObject();
             for (int i=1; i<=numColumns; i++) {
-              String name = rsmd.getColumnName(i);
-              JSONobj.put(name, rs.getObject(name));
+                String name = rsmd.getColumnName(i);
+                JSONobj.put(name, rs.getObject(name));
             }
             JSONarray.add(JSONobj);
         }
+        JSONObject result = new JSONObject();
+        result.put("transactions", JSONarray);
+        System.out.println(result.toString());
         return JSONarray;
     }
 }

@@ -3,10 +3,12 @@ package model;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 
 
@@ -77,19 +79,53 @@ public class Bank {
         
     }
     
+    public String transfer(BankAccount from, BankAccount to, Double amount) {
+        if (amount > from.getBalance()) {
+            return "No hay suficiente saldo";
+        }
+        
+        Double fromOldBalance = from.getBalance();
+        from.setBalance(from.getBalance() - amount);
+        
+        Double toOldBalance = to.getBalance();
+        to.setBalance(to.getBalance() + amount);
+        
+        try {
+            String fields = "iban,'account history'";
+            
+            // Add From Register (TABLE USER HISTORIES)
+            String fromHistory = "To -> " + to.getIBAN() + " (-" + amount + ")" + " | Old Balance -> " + fromOldBalance 
+                    + " | New Balance -> " + from.getBalance();
+            String fromValues = "'" + from.getIBAN() + "','" + fromHistory + "'";
+            DataBaseManager.Insert("'user histories'", fields, fromValues);
+            DataBaseManager.UpdateWithIBAN("'bank accounts'", "'balance'", from.getBalance().toString(), from.getIBAN());
+            
+            // Add To Register (TABLE USER HISTORIES)
+            String toHistory = "From -> " + from.getIBAN() + " (+" + amount + ")" + " | Old Balance -> " + toOldBalance 
+                    + " | New Balance -> " + to.getBalance();            
+            String toValues = "'" + to.getIBAN() + "','" + toHistory + "'";
+            DataBaseManager.Insert("'user histories'", fields, toValues);
+            DataBaseManager.UpdateWithIBAN("'bank accounts'", "'balance'", to.getBalance().toString(), to.getIBAN());
+            
+            return "OK";
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+    }
     
-    public JSONArray getTransactions(String IBAN) {
-        String[] labels = {"ACCOUNT HISTORY"};
+    
+    public String getTransactions(String IBAN) {
+        String[] labels = {"FROM IBAN", "AMOUNT"};
         ArrayList<String> columnNames =
                 new ArrayList<>(Arrays.asList(labels));
         try {
-            return DataBaseManager.getRecords("user histories", "IBAN", IBAN,
-                    columnNames);
+            String records = DataBaseManager.getTransferRecords(
+                    "user histories", "TO IBAN", IBAN, columnNames);
+            return records;
         } catch (Exception ex) {
             System.out.println("Algo salió mal al cargar tus transacciones");
             System.out.println(ex.toString());
             return null;
         }
     }
-    
 }
