@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Added Transactions Historic to Dashboard">
-      <change afterPath="$PROJECT_DIR$/web/js/TreeFirstTransactions.js" afterDir="false" />
+    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Added Functionality to Transactions">
+      <change afterPath="$PROJECT_DIR$/web/assets/img/Balance.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/assets/img/Spent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/assets/img/bankappLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/assets/img/chip.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/cardstyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/dynamicCard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/dynamicCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BankApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BankApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_01_PM_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_01_PM__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_03_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_03_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_05_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_05_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/json/historic.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/json/historic.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/mystyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/mystyles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/html/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/html/landingpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/landingpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/html/transfer.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/transfer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +61,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="26tOLegLxTgXqN84azJTsa0FET1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -59,15 +77,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/assets/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sebastián Fernández\WebstormProjects\BankApp\web\assets\img" />
+      <recent name="C:\Users\Sebastián Fernández\WebstormProjects\BankApp\web\css" />
       <recent name="C:\Users\Sebastián Fernández\WebstormProjects\BankApp" />
       <recent name="C:\Users\Sebastián Fernández\WebstormProjects\BankApp\web\assets\json" />
-      <recent name="C:\Users\Sebastián Fernández\WebstormProjects\BankApp\web\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Sebastián Fernández\WebstormProjects\BankApp\web" />
@@ -85,6 +104,12 @@
       <option name="presentableId" value="Default" />
       <updated>1649155025166</updated>
       <workItem from="1649155028789" duration="504000" />
+      <workItem from="1650959234437" duration="208000" />
+      <workItem from="1651147064135" duration="1891000" />
+      <workItem from="1651228697366" duration="3150000" />
+      <workItem from="1651484876376" duration="192000" />
+      <workItem from="1651492603957" duration="5318000" />
+      <workItem from="1651571918974" duration="3608000" />
     </task>
     <task id="LOCAL-00001" summary="Testting + Creating Dashboard">
       <created>1650328539258</created>
@@ -121,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650911026256</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added Functionality to Transactions">
+      <created>1650914819563</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1650914819563</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +178,7 @@
     <MESSAGE value="Working on Transfer Page" />
     <MESSAGE value="Upgrades Transfer" />
     <MESSAGE value="Added Transactions Historic to Dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Transactions Historic to Dashboard" />
+    <MESSAGE value="Added Functionality to Transactions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Functionality to Transactions" />
   </component>
 </project>
