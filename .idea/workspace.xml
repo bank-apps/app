@@ -1,28 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Added Functionality to Transactions">
-      <change afterPath="$PROJECT_DIR$/web/assets/img/Balance.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/img/Spent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/img/bankappLogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/img/chip.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/css/cardstyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/css/dynamicCard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/js/dynamicCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/BankApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BankApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_01_PM_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_01_PM__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_03_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_03_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_05_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2022_1_05_PM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Added 3 Dynamic cards at Dashboard">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/assets/json/historic.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/json/historic.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/mystyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/mystyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/dynamicCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/dynamicCard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/html/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/html/landingpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/landingpage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/html/transfer.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/transfer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +91,7 @@
       <workItem from="1651228697366" duration="3150000" />
       <workItem from="1651484876376" duration="192000" />
       <workItem from="1651492603957" duration="5318000" />
-      <workItem from="1651571918974" duration="3608000" />
+      <workItem from="1651571918974" duration="5201000" />
     </task>
     <task id="LOCAL-00001" summary="Testting + Creating Dashboard">
       <created>1650328539258</created>
@@ -153,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650914819563</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added 3 Dynamic cards at Dashboard">
+      <created>1651576083101</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1651576083102</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +168,7 @@
     <MESSAGE value="Upgrades Transfer" />
     <MESSAGE value="Added Transactions Historic to Dashboard" />
     <MESSAGE value="Added Functionality to Transactions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Functionality to Transactions" />
+    <MESSAGE value="Added 3 Dynamic cards at Dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added 3 Dynamic cards at Dashboard" />
   </component>
 </project>

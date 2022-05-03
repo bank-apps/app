@@ -54,11 +54,11 @@ body {
     background: linear-gradient(145deg, #6FD1A0, #224957);
 }
 .floating2{
-    background: linear-gradient(130deg, red, #224957);
+    background: linear-gradient(130deg, #224957, #7777);
 }
 
 .floating3{
-    background: linear-gradient(145deg, #224957, #7777);
+    background: linear-gradient(145deg, #7777, #6FD1A0);
 }
 
 .logo {
@@ -259,3 +259,4 @@ body {
     flex-direction: row;
     padding: 2em;
   }
+
