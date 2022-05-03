@@ -56,7 +56,7 @@ public class DataBaseManager {
         }
     }
     
-    static int SelectUserId(String dni) {
+    public static int SelectUserId(String dni) {
         String sql = "SELECT id FROM USERS WHERE dni=" + dni;
         try ( Connection conn = connect()) {
             Statement stmt = conn.createStatement();
@@ -78,6 +78,20 @@ public class DataBaseManager {
         }
     }
     
+    public static UserData SelectUserByDNI(String dni) throws ClassNotFoundException {
+        String sql = "SELECT * FROM USERS WHERE dni=" + dni;
+        try (Connection conn = connect()){
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            UserData userData = new UserData(rs.getString("dni"), rs.getString("password"), rs.getString("name"),
+            rs.getString("surnames"), rs.getString("email"), rs.getString("address"), rs.getString("phone number"));
+            return userData;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+    
     static String SelectAccountHistory(String IBAN) {
         String sql = "SELECT \"account history\" FROM \"USER HISTORIES\" WHERE iban=\"" + IBAN + "\"";
         try ( Connection conn = connect()) {
@@ -86,6 +100,28 @@ public class DataBaseManager {
             return rs.getString("account history");
         } catch (SQLException e) {
             return null;
+        }
+    }
+    
+    public static String SelectIBANWithID(int id) {
+        String sql = "SELECT \"iban\" FROM \"BANK ACCOUNTS\" WHERE \"owner id\"=" + id;
+        try (Connection conn = connect()){
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            return rs.getString("iban");
+        } catch (SQLException e) {
+            return null;
+        }
+    }
+    
+    static String SelectUserPassword(int id) throws Exception{
+        String sql = "SELECT password FROM USERS WHERE id=" + id;
+        try (Connection conn = connect()){
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            return rs.getString("password");
+        } catch (SQLException e) {
+            throw new Exception(String.valueOf(e));
         }
     }
     

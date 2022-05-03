@@ -55,23 +55,26 @@ public class Bank {
         }
     }
     
-    public void login(String dni, String passwd){
-        
+    public String login(String dni, String passwd){
+        try {
+            int uID = DataBaseManager.SelectUserId(dni);
+            if (uID != 0) {
+                String uPW = DataBaseManager.SelectUserPassword(uID);
+                if(uPW.equals(passwd)) {
+                    return "OK";
+                }
+            }
+        }
+        catch (Exception ex) {
+            return ex.getMessage();
+        }
+        return "El usuario o la contraseña son incorrectas";
     }
     
     private String getActualDate() {
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat();
         return formatter.format(date);
-    }
-    
-    private String getUserName(String IBAN) {
-        int id = DataBaseManager.SelectUserIdWithIBAN(IBAN);
-        String name = null;
-        if (id != 0) {
-            name = DataBaseManager.SelectUserFullNameWithID(id);
-        }
-        return name;
     }
     
     public String transfer(BankAccount from, BankAccount to, String recipient, Double amount, String concept) {
@@ -98,6 +101,21 @@ public class Bank {
             System.out.println("transfer: " + e.getMessage());
             return "Algo ha salido mal durante la transferencia";
         }
-        
+    }
+    
+    public String modifyUserData(UserData data) throws Exception {
+        try {
+            int userId = DataBaseManager.SelectUserId("'" + data.getDNI() + "'");
+
+            DataBaseManager.Update("users", "password", "'" + data.getPassword() + "'", "id = " + userId);
+            DataBaseManager.Update("users", "name", "'" + data.getName() + "'", "id = " + userId);
+            DataBaseManager.Update("users", "surnames", "'" + data.getSurnames() + "'", "id = " + userId);
+            DataBaseManager.Update("users", "email", "'" + data.getEmail() + "'", "id = " + userId);
+            DataBaseManager.Update("users", "address", "'" + data.getAddress() + "'", "id = " + userId);
+            DataBaseManager.Update("users", "'phone number'", "'" + data.getPhoneNumber() + "'", "id = " + userId);
+            return "OK";
+        } catch(Exception e) {
+            return e.getMessage();
+        }
     }
 }
