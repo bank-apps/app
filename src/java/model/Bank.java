@@ -53,9 +53,9 @@ public class Bank {
 
             // Table BANK ACCOUNTS
             String IBAN = GenerateIBAN();
-            fields = "iban,'owner id'";
+            fields = "iban,'owner id', maintenance";
             int owner_id = DataBaseManager.SelectUserId(userData.getDNI());
-            values = "'" + IBAN + "'," + owner_id;
+            values = "'" + IBAN + "'," + owner_id + BankAccount.maintenence;
             DataBaseManager.Insert("'bank accounts'", fields, values);
 
             // Table USER HISTORIES
@@ -98,6 +98,7 @@ public class Bank {
         }
         from.setBalance(from.getBalance() - amount);
         to.setBalance(to.getBalance() + amount);
+        
         try {
             String fields = "'from iban','to iban','recipient','amount','concept','date'";
             String values = "'" + from.getIBAN() + "'" + "," +
@@ -131,7 +132,8 @@ public class Bank {
     
     public String activateCard(BankAccount account) throws Exception{
         try{
-            account.maintenence += 0.5f;
+            account.maintenence += CreditCard.getMaintenance();
+            DataBaseManager.Update("'bank acccounts'", "BALANCE", String.valueOf(account.maintenence), "iban = '" + account.getIBAN() + "'");
             DataBaseManager.Update("'bank accounts'", "'card status'", "'1'", "iban = '" + account.getIBAN() + "'");
             return "OK";
         }catch(Exception e){
@@ -172,11 +174,9 @@ public class Bank {
     public void CollectMaintenance(UserAccount account) throws ClassNotFoundException{
         account.setBankAccounts(DataBaseManager.SelectBankAccounts(account));
         
-        for (BankAccount bankAccount : account.getBankAccounts()) {
-            System.out.println(bankAccount.getBalance());
-            bankAccount.setBalance(bankAccount.getBalance() - bankAccount.maintenence);
-            
-            transfer(bankAccount, new BankAccount(IBAN), "Banco", bankAccount.maintenence, "Cobro Automático de Cuenta");
+        for (BankAccount bankAccount : account.getBankAccounts()) {   
+            BankAccount cuentaBanco = DataBaseManager.GetBankBankAccount();
+            transfer(bankAccount, cuentaBanco, "Banco", bankAccount.getMaintenance(), "Cobro Automático de Cuenta");
         }
     }
     

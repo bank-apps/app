@@ -6,7 +6,7 @@ public class BankAccount {
     private final String IBAN;
     private Double balance;
     private Card card;
-    public double maintenence = 1.f;
+    public static double maintenence = 1.f;
 
     public BankAccount(String IBAN) {
         this.IBAN = IBAN;
@@ -33,4 +33,12 @@ public class BankAccount {
     public void setCard(Card card) {
         this.card = card;
     }   
+    
+    public double getMaintenance(){
+        if(this.card.getId() != null){
+            return 1.5f;
+        }else{
+            return 1f;
+        }
+    }
 }

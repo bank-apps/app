@@ -55,8 +55,7 @@ public class DataBaseManager {
     
     static void Update(String table, String field, String value, String condition) throws Exception {
         String sql = "UPDATE " + table + " set " + field + " = " + value + " WHERE " + condition;
-        
-        System.out.println(sql);
+       
         try ( Connection conn = DataBaseManager.connect()) {
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.executeUpdate();
@@ -144,9 +143,36 @@ public class DataBaseManager {
             while(rs.next()){
                 BankAccount bankAccount = new BankAccount(rs.getString("IBAN"));
                 bankAccount.setBalance(Double.valueOf(rs.getString("BALANCE")));
+                bankAccount.setCard(new CreditCard(rs.getString("CARD NUMBER")));
                 bankAccounts.add(bankAccount);
             }
             return bankAccounts;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+    
+    public static BankAccount GetBankBankAccount() throws ClassNotFoundException{
+        String sql = "SELECT * FROM 'BANK ACCOUNTS' WHERE \"OWNER ID\"=-1";
+        try (Connection conn = connect()){
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            BankAccount bankBankAccount = new BankAccount(rs.getString("IBAN"));
+            bankBankAccount.setBalance(rs.getDouble("BALANCE"));
+            return bankBankAccount;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+    
+    public static String GetCardStatus(int id) throws ClassNotFoundException{
+        String sql = "SELECT \"CARD STATUS\" FROM 'BANK ACCOUNTS' WHERE \"OWNER ID\"=" + id;
+        try (Connection conn = connect()){
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            return rs.toString();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
