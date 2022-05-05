@@ -10,11 +10,11 @@ import org.json.simple.JSONArray;
 
 public class Bank {
 
-    private String IBAN;
+    private String BANKIBAN;
     
     public Bank() throws ClassNotFoundException {
         DataBaseManager.connect();
-        IBAN = "ES007649000000000000000";
+        BANKIBAN = "ES007649000000000000000";
     }
 
     private String GenerateIBAN() {
@@ -180,12 +180,17 @@ public class Bank {
         }
     }
     
-    public void AddBankAccount(UserAccount account) throws ClassNotFoundException, Exception{
-        account.addBankAccount(new BankAccount(GenerateIBAN()));
-        String IBAN = GenerateIBAN();
-        String fields = "iban,'owner id'";
-        int owner_id = DataBaseManager.SelectUserId(account.getData().getDNI());
-        String values = "'" + IBAN + "'," + owner_id;
-        DataBaseManager.Insert("'bank accounts'", fields, values);
+    public String AddBankAccount(UserAccount account) throws ClassNotFoundException, Exception{
+        try{
+            account.addBankAccount(new BankAccount(GenerateIBAN()));
+            String IBAN = GenerateIBAN();
+            String fields = "iban,'owner id'";
+            int owner_id = DataBaseManager.SelectUserId(account.getData().getDNI());
+            String values = "'" + IBAN + "'," + owner_id;
+            DataBaseManager.Insert("'bank accounts'", fields, values);
+            return "OK";
+        }catch(Exception e){
+            return e.getMessage();
+        }
     }
 }
