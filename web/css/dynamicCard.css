@@ -51,14 +51,15 @@ body {
 }
 
 .floating1{
-    background: linear-gradient(145deg, #6FD1A0, #224957);
+    background: linear-gradient(145deg, #224957, #6FD1A0);
 }
+
 .floating2{
-    background: linear-gradient(130deg, #224957, #7777);
+    background: linear-gradient(130deg, #7777, #7777);
 }
 
 .floating3{
-    background: linear-gradient(145deg, #7777, #6FD1A0);
+    background: linear-gradient(145deg, #224957, #6FD1A0);
 }
 
 .logo {
@@ -135,7 +136,7 @@ body {
     font-family: kredit-front, sans-serif;
     font-weight: bold;
     font-size: 1.8rem;
-    color: #fff;
+    color: #ffffff;
     position: absolute;
     letter-spacing: 3px;
     bottom: 90px;
@@ -148,7 +149,7 @@ body {
 
 .card_no2 {
     transform: translateZ(40px);
-    font-family: kredit-front, sans-serif;
+    font-family: 'Lexend Deca', 'Montserrat', 'Helvetica', sans-serif;
     font-weight: bold;
     font-size: 1rem;
     color: #fff;
@@ -168,7 +169,6 @@ body {
     bottom: 56px;
     color: #fff;
     font-size: 0.58rem;
-    left: 146px;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
     text-shadow: -9px 8.7px 6px rgba(0, 0, 0, 0.8);
     transform: translateZ(30px);
@@ -183,7 +183,7 @@ body {
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
     text-shadow: -9px 8.7px 6px rgba(0, 0, 0, 0.8);
     bottom: 54px;
-    left: 180px;
+    left: 60px;
     z-index: 20;
     transform: translateZ(30px);
     letter-spacing: 2px;
@@ -191,7 +191,7 @@ body {
 
 .valid_date2 {
     position: absolute;
-    font-family: serif;
+    font-family: 'cc font', monospace;
     font-size: 2.5rem;
     font-weight: bold;
     color: #fff;
@@ -206,8 +206,8 @@ body {
 
 .holder {
     position: absolute;
-    font-family: kredit-front;
-    font-size: 1.5rem;
+    font-family: 'cc font', monospace;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #fff;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
