@@ -26,6 +26,8 @@
 
 <!--<div class="temp"> HERE GOES DASHBOARD. <br> COMING SOON</div>-->
 
+<a href="${pageContext.request.contextPath}/jsp/viewcards.jsp">View your cards</a>
+
 <section class="contentHistorical">
     <div class="CartContainer" id="Carrito2">
         <div class="HeaderCart">

@@ -9,6 +9,9 @@ h1 {
     margin-bottom: 0;
 }
 
+button {
+    margin-top: 1.5em;
+}
 
 #page-title {
     display: flex;
@@ -42,7 +45,7 @@ main {
 #card-display {
     display: flex;
     flex-direction: row;
-    margin-top: 2em;
+    justify-items: center;
     width: 100%;
     gap: 12em;
     margin-left: 15em;

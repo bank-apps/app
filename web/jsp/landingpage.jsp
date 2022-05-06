@@ -24,11 +24,11 @@
                     </li>
 
                     <li class="nav-item active">
-                        <a class="nav-about" href="/app/jsp/login.jsp">Login</a>
+                        <a class="nav-about" href="${pageContext.request.contextPath}/jsp/login.jsp">Login</a>
                     </li>
 
                     <li class="nav-item active">
-                        <a class="nav-about" href="/app/jsp/signup1.jsp">Sing up</a>
+                        <a class="nav-about" href="${pageContext.request.contextPath}/jsp/signup1.jsp">Sing up</a>
                     </li>
                 </ul>
     </nav>
