@@ -13,9 +13,9 @@
   <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
   <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <link rel="stylesheet" href="../css/viewcards.css">
-  <link rel="stylesheet" href="../css/addnewcard.css">
-  <script src="../js/sidebarLoader.js"></script>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/viewcards.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/addnewcard.css">
+  <script src="${pageContext.request.contextPath}/js/sidebarLoader.js"></script>
 
 </head>
 <body>
@@ -29,7 +29,9 @@
     </div>
     <div id="card-display">
       <div id="card-display-slide">
-        <img src="/web/assets/img/addnewcard.png">
+          <form action="#" method="post">
+              <button type="submit"><img src="${pageContext.request.contextPath}/assets/img/addnewcard.png"></button>
+          </form>
       </div>
 
       <div id="card-info">

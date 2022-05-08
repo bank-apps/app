@@ -23,3 +23,8 @@ h2 {
 #card-display {
     gap: 5em;
 }
+
+button {
+    border: none;
+    background-color: inherit;
+}

@@ -1,3 +1,6 @@
+<%@page import="model.UserData"%>
+<%@page import="model.UserAccount"%>
+<%@page import="java.util.Random"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,11 +16,14 @@
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <link rel="stylesheet" href="../css/viewcards.css">
-    <script src="../js/sidebarLoader.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/viewcards.css">
+    <script src="${pageContext.request.contextPath}/js/sidebarLoader.js"></script>
 
 </head>
 <body>
+    <% session.getAttribute("user"); %>
+    <% UserAccount account = (UserAccount) session.getAttribute("user"); %>
+    <% UserData userData = account.getData();%>
 
 <div id="sidebarLoaded"></div>
 
@@ -28,8 +34,8 @@
         </div>
         <div id="card-display">
             <div id="card-display-slide">
-                <img src="/web/assets/img/addnewcard.png">
-                <img src="/web/assets/img/Card.png">
+                <img src="${pageContext.request.contextPath}/assets/img/addnewcard.png">
+                <img src="${pageContext.request.contextPath}/assets/img/Card.png">
             </div>
 
             <div id="card-info">
@@ -41,7 +47,7 @@
 
                 <div class="card-info-row">
                     <h2>Expiry date</h2>
-                    <h3>1234 1234 1234 2345</h3>
+                    <h3>02/30</h3>
                 </div>
                 <div class="card-info-row">
                     <h2>CVV code</h2>
@@ -55,9 +61,12 @@
 
                 <div class="card-info-row">
                     <h2>Card holder</h2>
-                    <h3>Name Lastname</h3>
+                    <h3><%= userData.getName() + " " + userData.getSurnames() %></h3>
                 </div>
-                <button>Activate</button>
+                <form action="#" method="post">
+                    <button type="submit">Activate</button>
+                </form>
+                
             </div>
         </div>
     </div>
