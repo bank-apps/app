@@ -6,20 +6,21 @@ package control;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.UserAccount;
+import model.BankAccount;
 
 /**
  *
- * @author nahimaortega
+ * @author samuel-portatil
  */
-@WebServlet(name = "TransferServlet", urlPatterns = {"/TransferServlet"})
-public class TransferServlet extends HttpServlet {
+@WebServlet(name = "ActivateCardServlet", urlPatterns = {"/ActivateCardServlet"})
+public class ActivateCardServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,19 +32,15 @@ public class TransferServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
-        TransferCommand transferCommand = new TransferCommand();
-        transferCommand.init(getServletContext(), request, response);
-        HttpSession session = request.getSession(true);
-        UserAccount userAccount = (UserAccount) session.getAttribute("user");
-        String quantity = request.getParameter("quantity");
-        Double amount = Double.parseDouble(quantity/*.substring(0, quantity.length() - 5)*/);
-        System.out.println(amount);
-        String toIBAN = request.getParameter("recipient");
-        String recipient = request.getParameter("firstname");
-        String concept = request.getParameter("message");
-        transferCommand.process(userAccount, amount, toIBAN, recipient, concept);
+            throws ServletException, IOException, Exception {
+        response.setContentType("text/html;charset=UTF-8");
+        try ( PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            ActivateCardCommand cardCommand = new ActivateCardCommand();
+            cardCommand.init(getServletContext(), request, response);
+            BankAccount account = (BankAccount) request.getAttribute("bankaccount");
+            cardCommand.process(account);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -58,7 +55,11 @@ public class TransferServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (Exception ex) {
+            Logger.getLogger(ActivateCardServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -72,7 +73,11 @@ public class TransferServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (Exception ex) {
+            Logger.getLogger(ActivateCardServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
