@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Added Solicitar préstamo &amp; Hacer Transferencia Buttons">
+    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Fixing dashboard">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/html/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/Historic.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/Historic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/dashboard.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +97,7 @@
       <workItem from="1651831042971" duration="2995000" />
       <workItem from="1652096117555" duration="6029000" />
       <workItem from="1652108389095" duration="16000" />
-      <workItem from="1652111561295" duration="991000" />
+      <workItem from="1652111561295" duration="1574000" />
     </task>
     <task id="LOCAL-00001" summary="Testting + Creating Dashboard">
       <created>1650328539258</created>
@@ -177,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652102085857</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Fixing dashboard">
+      <created>1652112716223</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1652112716223</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +214,7 @@
     <MESSAGE value="Improving Card View" />
     <MESSAGE value="Better Dashboard" />
     <MESSAGE value="Added Solicitar préstamo &amp; Hacer Transferencia Buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Solicitar préstamo &amp; Hacer Transferencia Buttons" />
+    <MESSAGE value="Fixing dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing dashboard" />
   </component>
 </project>

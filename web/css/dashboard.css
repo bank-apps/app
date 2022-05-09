@@ -335,6 +335,19 @@ body, html {
     align-items: center;
 }
 
+#Carrito4:hover{
+    background-color: #6FD1A0;
+    color: #F2F5FA;
+}
+
+#Carrito3:hover{
+    background-color: #6FD1A0;
+    color: #F2F5FA;
+}
+
+.Heading2:hover{
+    color: white;
+}
 
 
 .dosbotones{
