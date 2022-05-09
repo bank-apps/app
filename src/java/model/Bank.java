@@ -16,8 +16,11 @@ import org.json.simple.JSONObject;
 
 public class Bank {
 
-    public Bank() {
+    private String BANKIBAN;
+    
+    public Bank() throws ClassNotFoundException {
         DataBaseManager.connect();
+        BANKIBAN = "ES007649000000000000000";
     }
 
     private String GenerateIBAN(){
@@ -80,6 +83,7 @@ public class Bank {
             if (uID != 0) {
                 String uPW = DataBaseManager.SelectUserPassword(uID);
                 if(uPW.equals(passwd)) {
+                    CollectMaintenance(new UserAccount(DataBaseManager.SelectUserByDNI(dni)));
                     return "OK";
                 }
             }
