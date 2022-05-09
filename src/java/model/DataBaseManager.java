@@ -29,8 +29,13 @@ public class DataBaseManager {
         }
     }
 
-    static Connection connect(){
-        // Cadena de conexión SQLite
+    static Connection connect() {
+        try {
+            // Cadena de conexión SQLite
+            Class.forName("org.sqlite.JDBC");
+        } catch (ClassNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
         Connection conn = null;
         try {
             String url = actualDB;
@@ -43,11 +48,11 @@ public class DataBaseManager {
     
     static void Insert(String table, String fields, String values) throws Exception {
         String sql = "INSERT INTO " + table + "(" + fields + ") VALUES(" + values + ")";
-        try (Connection conn = DataBaseManager.connect()){           
+        try ( Connection conn = DataBaseManager.connect()) {
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            throw new Exception(String.valueOf(e));
+            throw new Exception(e.getMessage());
         }
     }
     
@@ -72,18 +77,28 @@ public class DataBaseManager {
         }
     }
     
-    static int SelectUserId(String dni){
+    public static int SelectUserId(String dni) throws ClassNotFoundException {
         String sql = "SELECT id FROM USERS WHERE dni=" + dni;
-        try (Connection conn = connect()){
+        try ( Connection conn = connect()) {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             return rs.getInt("id");
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            return 0;
         }
-        return 0;
     }
     
+    
+    static int SelectUserIdWithIBAN(String IBAN) {
+        String sql = "SELECT \"owner id\" FROM \"BANK ACCOUNTS\" WHERE iban=\"" + IBAN + "\"";
+        try ( Connection conn = connect()) {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            return rs.getInt("owner id");
+        } catch (SQLException e) {
+            return 0;
+        }
+    }
     
     
     public static UserData SelectUserByDNI(String dni) throws ClassNotFoundException {
@@ -100,7 +115,27 @@ public class DataBaseManager {
         return null;
     }
     
+    public static Double SelectBalanceWithIBAN(String IBAN) {
+        String sql = "SELECT \"balance\" FROM \"BANK ACCOUNTS\" WHERE iban=\"" + IBAN + "\"";
+        try ( Connection conn = connect()) {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            return rs.getDouble("balance");
+        } catch (SQLException e) {
+            return null;
+        }
+    }
     
+    public static String SelectIBANWithID(int id) {
+        String sql = "SELECT \"iban\" FROM \"BANK ACCOUNTS\" WHERE \"owner id\"=" + id;
+        try (Connection conn = connect()){
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            return rs.getString("iban");
+        } catch (SQLException e) {
+            return null;
+        }
+    }
     
     static String SelectUserPassword(int id) throws Exception{
         String sql = "SELECT password FROM USERS WHERE id=" + id;
@@ -110,6 +145,18 @@ public class DataBaseManager {
             return rs.getString("password");
         } catch (SQLException e) {
             throw new Exception(String.valueOf(e));
+        }
+    }
+    
+    static String SelectUserFullNameWithID(int ID) {
+        String sql = "SELECT name,surnames FROM 'USERS' WHERE id=" + ID;
+        try ( Connection conn = connect()) {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            String fullName = rs.getString("name") + " " + rs.getString("surnames");
+            return fullName;
+        } catch (SQLException e) {
+            return null;
         }
     }
 
@@ -152,5 +199,51 @@ public class DataBaseManager {
         result.put("transactions", JSONarray);
         System.out.println(result.toString());
         return JSONarray;
+    }
+    
+    
+    public static ArrayList<BankAccount> SelectBankAccounts(UserAccount account) throws ClassNotFoundException{
+        String sql = "SELECT * FROM 'BANK ACCOUNTS' WHERE \"OWNER ID\"=" + DataBaseManager.SelectUserId("'" + account.getData().getDNI() + "'");
+        try (Connection conn = connect()){
+            ArrayList<BankAccount> bankAccounts = new ArrayList<>();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while(rs.next()){
+                BankAccount bankAccount = new BankAccount(rs.getString("IBAN"));
+                bankAccount.setBalance(Double.valueOf(rs.getString("BALANCE")));
+                bankAccount.setCard(new CreditCard(rs.getString("CARD NUMBER")));
+                bankAccounts.add(bankAccount);
+            }
+            return bankAccounts;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+    
+    public static BankAccount GetBankBankAccount() throws ClassNotFoundException{
+        String sql = "SELECT * FROM 'BANK ACCOUNTS' WHERE \"OWNER ID\"=-1";
+        try (Connection conn = connect()){
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            BankAccount bankBankAccount = new BankAccount(rs.getString("IBAN"));
+            bankBankAccount.setBalance(rs.getDouble("BALANCE"));
+            return bankBankAccount;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+    
+    public static String GetCardStatus(int id) throws ClassNotFoundException{
+        String sql = "SELECT \"CARD STATUS\" FROM 'BANK ACCOUNTS' WHERE \"OWNER ID\"=" + id;
+        try (Connection conn = connect()){
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            return rs.toString();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 }

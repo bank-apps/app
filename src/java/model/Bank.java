@@ -1,8 +1,10 @@
 package model;
 
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.logging.Level;
@@ -32,17 +34,24 @@ public class Bank {
         return IBAN;
     }
     
-    public String register(UserData userData) throws ClassNotFoundException{     
+    private String GenerateCardNumber(){
+        Random random = new Random();
+        String country_code = String.format("%07d", random.nextInt(9999999));
+        String user_code = String.format("%09d", random.nextInt(999999999));
+        String card_code = country_code + user_code;
+        return card_code;
+    }
+    
+    public String register(UserData userData) {     
         int id = DataBaseManager.SelectUserId(userData.getDNI());
 
-        if(id != 0){
+        if(id != 0) {
             return "Este usuario ya existe";
         }
-        try{
+        try {
             // Table USERS
             String fields = "dni,password,name,surnames,email,address,'phone number'";
-            String values = String.join(", ", userData.getArrayData());
-
+            String values = String.join(",", userData.getArrayData());
             DataBaseManager.Insert("users", fields, values);
 
             // Table BANK ACCOUNTS
@@ -52,13 +61,14 @@ public class Bank {
             values = "'" + IBAN + "'," + owner_id;
             DataBaseManager.Insert("'bank accounts'", fields, values);
 
+            /*
             // Table USER HISTORIES
             fields = "iban";
             values = "'" + IBAN + "'";
-
-            DataBaseManager.Insert("'user histories'", fields, values);  
+            DataBaseManager.Insert("'user histories'", fields, values); 
+            */ 
             return "OK";
-        }catch(Exception e){
+        } catch(Exception e) {
             return e.getMessage();
         }
     }
@@ -69,14 +79,15 @@ public class Bank {
             int uID = DataBaseManager.SelectUserId(dni);
             if (uID != 0) {
                 String uPW = DataBaseManager.SelectUserPassword(uID);
-                return "OK";
+                if(uPW.equals(passwd)) {
+                    return "OK";
+                }
             }
         }
         catch (Exception ex) {
             return ex.getMessage();
         }
         return "El usuario o la contraseña son incorrectas";
-        
     }
     
     
@@ -98,40 +109,54 @@ public class Bank {
     
     
     
-    public String transfer(BankAccount from, BankAccount to, Double amount) {
+    public String transfer(BankAccount from, BankAccount to, String recipient, Double amount, String concept) {
         if (amount > from.getBalance()) {
             return "No hay suficiente saldo";
         }
-        
-        Double fromOldBalance = from.getBalance();
         from.setBalance(from.getBalance() - amount);
-        
-        Double toOldBalance = to.getBalance();
         to.setBalance(to.getBalance() + amount);
-        
         try {
-            String fields = "iban,'account history'";
-            
-            // Add From Register (TABLE USER HISTORIES)
-            String fromHistory = "To -> " + to.getIBAN() + " (-" + amount + ")" + " | Old Balance -> " + fromOldBalance 
-                    + " | New Balance -> " + from.getBalance();
-            String fromValues = "'" + from.getIBAN() + "','" + fromHistory + "'";
-            DataBaseManager.Insert("'user histories'", fields, fromValues);
-            DataBaseManager.UpdateWithIBAN("'bank accounts'", "'balance'", from.getBalance().toString(), from.getIBAN());
-            
-            // Add To Register (TABLE USER HISTORIES)
-            String toHistory = "From -> " + from.getIBAN() + " (+" + amount + ")" + " | Old Balance -> " + toOldBalance 
-                    + " | New Balance -> " + to.getBalance();            
-            String toValues = "'" + to.getIBAN() + "','" + toHistory + "'";
-            DataBaseManager.Insert("'user histories'", fields, toValues);
-            DataBaseManager.UpdateWithIBAN("'bank accounts'", "'balance'", to.getBalance().toString(), to.getIBAN());
+            String fields = "'from iban','to iban','recipient','amount','concept','date'";
+            String values = "'" + from.getIBAN() + "'" + "," +
+                            "'" + to.getIBAN() + "'" + "," + 
+                            "'" + recipient + "'" + "," + 
+                            "'" + amount + "'" + "," + 
+                            "'" + concept + "'" + "," +
+                            "'" + getActualDate() + "'";
+                            
+            DataBaseManager.Insert("'user histories'", fields, values);
+            DataBaseManager.Update("'bank accounts'", "'balance'", from.getBalance().toString(), "iban = '" + from.getIBAN() + "'");
+            DataBaseManager.Update("'bank accounts'", "'balance'", to.getBalance().toString(), "iban = '" + to.getIBAN() + "'");
             
             return "OK";
         } catch (Exception e) {
-            return e.getMessage();
+            System.out.println("transfer: " + e.getMessage());
+            return "Algo ha salido mal durante la transferencia";
         }
     }
     
+    
+    public String issueCard(BankAccount account) throws Exception{
+        try{
+            Card card = new CreditCard(GenerateCardNumber());
+            account.setCard(card);
+            DataBaseManager.Update("'bank accounts'", "'card number'", "'" + card.getId() + "'", "iban = '" + account.getIBAN() + "'");
+            return "OK";
+        }catch(Exception e){
+            return e.getMessage();
+        }  
+    }
+    
+    public String activateCard(BankAccount account) throws Exception{
+        try{
+            account.maintenence += CreditCard.getMaintenance();
+            DataBaseManager.Update("'bank acccounts'", "BALANCE", String.valueOf(account.maintenence), "iban = '" + account.getIBAN() + "'");
+            DataBaseManager.Update("'bank accounts'", "'card status'", "'1'", "iban = '" + account.getIBAN() + "'");
+            return "OK";
+        }catch(Exception e){
+            return e.getMessage();
+        }
+    }
     
     public String getTransactions(String IBAN) {
         String[] labels = {"FROM IBAN", "AMOUNT"};
@@ -146,5 +171,37 @@ public class Bank {
             System.out.println(ex.toString());
             return null;
         }
+    }
+    
+    
+    public String AddBankAccount(UserAccount account) throws ClassNotFoundException, Exception{
+        try{
+            account.addBankAccount(new BankAccount(GenerateIBAN()));
+            String IBAN = GenerateIBAN();
+            String fields = "iban,'owner id'";
+            int owner_id = DataBaseManager.SelectUserId(account.getData().getDNI());
+            String values = "'" + IBAN + "'," + owner_id;
+            DataBaseManager.Insert("'bank accounts'", fields, values);
+            return "OK";
+        }catch(Exception e){
+            return e.getMessage();
+        }
+    }
+    
+    
+    public void CollectMaintenance(UserAccount account) throws ClassNotFoundException{
+        account.setBankAccounts(DataBaseManager.SelectBankAccounts(account));
+        
+        for (BankAccount bankAccount : account.getBankAccounts()) {   
+            BankAccount cuentaBanco = DataBaseManager.GetBankBankAccount();
+            transfer(bankAccount, cuentaBanco, "Banco", bankAccount.getMaintenance(), "Cobro Automático de Cuenta");
+        }
+    }
+    
+    
+    private String getActualDate() {
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat();
+        return formatter.format(date);
     }
 }

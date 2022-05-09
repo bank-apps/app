@@ -5,6 +5,7 @@
 package control;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Bank;
+import model.BankAccount;
 import model.UserAccount;
 import model.UserData;
 import model.DataBaseManager;
@@ -34,7 +36,11 @@ public class LoginCommand {
             HttpSession session = request.getSession(true);
             UserData userData = DataBaseManager.SelectUserByDNI(dni);
             UserAccount userAccount = new UserAccount(userData);
+            ArrayList<BankAccount> bankAccounts = DataBaseManager.SelectBankAccounts(userAccount);
+            BankAccount defaultBankAccount = bankAccounts.get(0);
             session.setAttribute("user", userAccount);
+            session.setAttribute("bankAccounts", bankAccounts);
+            session.setAttribute("bankAccount", defaultBankAccount);
             forward("/jsp/dashboard.jsp");
         }
         else {
