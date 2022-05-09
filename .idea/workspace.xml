@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Better Dashboard">
+    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Added Solicitar préstamo &amp; Hacer Transferencia Buttons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/dashboard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/html/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/Historic.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/Historic.js" afterDir="false" />
     </list>
@@ -97,7 +96,9 @@
       <workItem from="1651571918974" duration="5519000" />
       <workItem from="1651750939078" duration="3057000" />
       <workItem from="1651831042971" duration="2995000" />
-      <workItem from="1652096117555" duration="5739000" />
+      <workItem from="1652096117555" duration="6029000" />
+      <workItem from="1652108389095" duration="16000" />
+      <workItem from="1652111561295" duration="991000" />
     </task>
     <task id="LOCAL-00001" summary="Testting + Creating Dashboard">
       <created>1650328539258</created>
@@ -169,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652097331814</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added Solicitar préstamo &amp; Hacer Transferencia Buttons">
+      <created>1652102085857</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1652102085857</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +207,7 @@
     <MESSAGE value="Improving Dashboard + Cards" />
     <MESSAGE value="Improving Card View" />
     <MESSAGE value="Better Dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Better Dashboard" />
+    <MESSAGE value="Added Solicitar préstamo &amp; Hacer Transferencia Buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Solicitar préstamo &amp; Hacer Transferencia Buttons" />
   </component>
 </project>

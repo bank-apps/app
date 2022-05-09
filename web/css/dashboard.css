@@ -335,48 +335,7 @@ body, html {
     align-items: center;
 }
 
-.center {
-    width: 180px;
-    height: 60px;
-    position: absolute;
-}
 
-.btn {
-    width: 180px;
-    height: 60px;
-    cursor: pointer;
-    background: transparent;
-    border: 1px solid #2F3841;
-    outline: none;
-    transition: 1s ease-in-out;
-}
-
-svg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    fill: none;
-    stroke: #2F3841;
-    stroke-dasharray: 150 480;
-    stroke-dashoffset: 150;
-    transition: 1s ease-in-out;
-}
-
-.btn:hover {
-    transition: 1s ease-in-out;
-    background: #6FD1A0;
-}
-
-.btn:hover svg {
-    stroke-dashoffset: -480;
-}
-
-.btn span {
-    color: #000000;
-    font-size: 18px;
-    font-weight: 100;
-
-}
 
 .dosbotones{
     margin-top: 5%;

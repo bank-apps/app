@@ -1,11 +1,14 @@
 $.getJSON("../assets/json/historic.json", function (result) {
 
+    /*
 console.log("JSDKDJSDJSJSJSK");
 console.log(${pageContext.request.contextPath});
 
         $.get('${pageContext.request.contextPath}/myservlet', function(data) {
         alert(data);
     });
+
+     */
 
     /*
     var button = document.getElementById("botonTRANS");
