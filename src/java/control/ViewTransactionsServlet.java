@@ -38,18 +38,17 @@ public class ViewTransactionsServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ViewTransactionsServlet1</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ViewTransactionsServlet1 at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        ViewTransactionsCommand vtc = new ViewTransactionsCommand();
+        vtc.init(getServletContext(), request, response);
+        
+        HttpSession session = request.getSession(true);
+        BankAccount bankAccount = (BankAccount) session.getAttribute("bankAccount");
+        try {
+            vtc.process(bankAccount.getIBAN());
+        } catch (SQLException ex) {
+            Logger.getLogger(ViewTransactionsServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ViewTransactionsServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -80,20 +79,7 @@ public class ViewTransactionsServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ViewTransactionsCommand vtc = new ViewTransactionsCommand();
-        vtc.init(getServletContext(), request, response);
-        
-        HttpSession session = request.getSession(true);
-        BankAccount bankAccount = (BankAccount) session.getAttribute("bankAccount");
-        try {
-            vtc.process(bankAccount.getIBAN());
-        } catch (SQLException ex) {
-            Logger.getLogger(ViewTransactionsServlet.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ViewTransactionsServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
+        processRequest(request, response);
     }
 
     /**
