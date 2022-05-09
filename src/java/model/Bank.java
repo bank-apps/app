@@ -37,11 +37,6 @@ public class Bank {
         int owner_id = DataBaseManager.SelectUserId(userData.getDNI());
         values = "'" + IBAN + "'," + owner_id;
         DataBaseManager.Insert("'bank accounts'", fields, values);
-        
-        // Table USER HISTORIES
-        fields = "iban";
-        values = "'" + IBAN + "'";
-        DataBaseManager.Insert("'user histories'", fields, values);
     }
     
     public void login(String dni, String passwd){
