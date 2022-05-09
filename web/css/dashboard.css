@@ -1,0 +1,273 @@
+.contentHistorical {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+
+.CartContainer{
+    margin-top: 15%;
+    float: left;
+    height: auto;
+    padding: 3.125em;
+    margin-left: 8%;
+    background-color: #ffffff;
+    border-radius: 1.25em;
+    box-shadow: 0 0.625em 1.25em #1687d933;
+    width: 40em;
+}
+
+.HeaderCart{
+    margin: auto;
+    margin-bottom: 3em;
+    width: 90%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Heading{
+    font-size: 1.25em;
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    color: #2F3841;
+}
+
+.HeadingResumen{
+    font-size: 1.25em;
+    font-family: Montserrat, sans-serif;
+    color: #2F3841;
+    margin: auto;
+}
+
+.Action{
+    font-size: 0.9em;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    color: #6FD1A0;
+    cursor: pointer;
+    border-bottom: 0.1em solid #6FD1A0;
+}
+
+.Cart-Items{
+    margin: auto;
+    width: 90%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.image-box{
+    width: 15%;
+    text-align: center;
+}
+
+.about{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    padding-left: 3.125em;
+    float: left;
+    align-self: center;
+    align-items: center;
+
+
+}
+
+.title{
+    font-size: 100%;
+    font-family: Montserrat, sans-serif;
+    color: black;
+    width: 100%;
+    margin-top: 0.4em;
+
+}
+
+.typeRED{display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-left: 2em;
+    width: 61.61px;
+    height: 17.25px;
+    color: #D0021B;
+    font-family: 'Avenir', serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 9.85714px;
+    line-height: 13px;
+    background: rgba(208, 2, 27, 0.22);
+    border-radius: 82.1429px;
+}
+
+.typeGREEN{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-left: 2em;
+    width: 61.61px;
+    height: 17.25px;
+    color: #0A9707;
+    font-family: 'Avenir', serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 9.85714px;
+    line-height: 13px;
+    background: rgba(10, 151, 7, 0.23);
+    border-radius: 82.1429px;
+
+
+}
+
+.subtitle{
+    line-height: 0.625em;
+    font-size: 1.125em;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    color: #909090;
+}
+
+.counter{
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn{
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+    font-family: Montserrat, sans-serif;
+    font-weight: 900;
+    color: #202020;
+    cursor: pointer;
+}
+
+.count{
+    font-size: 1.25em;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    color: #202020;
+}
+
+.prices{
+    height: 100%;
+    text-align: right;
+}
+
+.amount{
+    margin-left: 1em;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    color: #202020;
+    align-self: center;
+}
+
+.generate{
+    padding-top: 0.32em;
+    font-size: 0.88em;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    color: #6FD1A0; /*#224957;*/
+    cursor: pointer;
+}
+
+.pad{
+    margin-top: 0.32em;
+}
+
+hr{
+    width: 66%;
+    float: right;
+    margin-right: 5%;
+}
+
+.checkout{
+    float: right;
+    margin-right: 5%;
+    width: 28%;
+}
+
+.total{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Subtotal{
+    font-size: 1.38em;
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    color: #202020;
+}
+
+.items{
+    font-size: 1em;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    color: #909090;
+    line-height: 0.625em;
+}
+
+.total-amount{
+    font-size: 2.25em;
+    font-family: Montserrat, sans-serif;
+    font-weight: 900;
+    color: #202020;
+}
+
+
+
+.C{
+    position: absolute;
+    width: 3.47em;
+    height: 3.37em;
+    background: #FF833D;
+    border: 0.125em solid #010101;
+    box-sizing: border-box;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.37em;
+    line-height: 1.69em;
+    margin: 2.5em;
+    color: #FFFFFF;
+}
+
+.C1{
+    margin: 2.5em;
+}
+.C2{
+    margin: 2.5em;
+}
+.C3{
+    margin: 2.5em;
+}
+
+.progressBar{
+    position: absolute;
+    top: 13%;
+    left: 10%;
+    width: 47em;
+    height: 6.25em;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.dropdown{
+    margin-left: 3em;
+}

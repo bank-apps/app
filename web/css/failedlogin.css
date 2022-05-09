@@ -1,0 +1,35 @@
+h1 {
+    margin-top: 0.75em;
+}
+
+h2 {
+    margin-top: 0.5em;
+}
+
+input.input-sign-in.form-control {
+    margin-top: 1.25em;
+}
+
+div#login-error-message {
+    background-color: #FEDCE0;
+    color: #871A21;
+    border-radius: 0.5em;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5em;
+    padding: 0.5em;
+}
+
+.fa-user {
+    position: absolute;
+    margin-bottom: 3.5em;
+    margin-left: 1em;
+}
+
+.fa-lock {
+    position: absolute;
+    margin-top: 6em;
+    margin-left: 1em;
+}

@@ -32,7 +32,7 @@ public class Bank {
         return IBAN;
     }
     
-    public String register(UserData userData) throws Exception{     
+    public String register(UserData userData) throws ClassNotFoundException{     
         int id = DataBaseManager.SelectUserId(userData.getDNI());
 
         if(id != 0){
@@ -78,6 +78,25 @@ public class Bank {
         return "El usuario o la contraseña son incorrectas";
         
     }
+    
+    
+    public String modifyUserData(UserData data) throws Exception {
+        try{
+            int userId = DataBaseManager.SelectUserId(data.getDNI());
+
+            DataBaseManager.Update("users", "password", data.getPassword(), "id = " + userId);
+            DataBaseManager.Update("users", "name", data.getName(), "id = " + userId);
+            DataBaseManager.Update("users", "surnames", data.getSurnames(), "id = " + userId);
+            DataBaseManager.Update("users", "email", data.getEmail(), "id = " + userId);
+            DataBaseManager.Update("users", "address", data.getAddress(), "id = " + userId);
+            DataBaseManager.Update("users", "'phone number'", data.getPhoneNumber(), "id = " + userId);
+            return "OK";
+        }catch(Exception e){
+            return e.getMessage();
+        }
+    }
+    
+    
     
     public String transfer(BankAccount from, BankAccount to, Double amount) {
         if (amount > from.getBalance()) {

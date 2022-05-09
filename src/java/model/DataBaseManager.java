@@ -51,6 +51,17 @@ public class DataBaseManager {
         }
     }
     
+    static void Update(String table, String field, String value, String condition) throws Exception {
+        String sql = "UPDATE " + table + " set " + field + " = " + value + " WHERE " + condition;
+       
+        try ( Connection conn = DataBaseManager.connect()) {
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+    
     static void UpdateWithIBAN(String table, String field, String value, String IBAN) throws Exception {
         String sql = "UPDATE " + table + " set " + field + " = '" + value + "' WHERE iban = '" + IBAN + "'";
         try ( Connection conn = DataBaseManager.connect()) {
@@ -72,6 +83,24 @@ public class DataBaseManager {
         }
         return 0;
     }
+    
+    
+    
+    public static UserData SelectUserByDNI(String dni) throws ClassNotFoundException {
+        String sql = "SELECT * FROM USERS WHERE dni=" + dni;
+        try (Connection conn = connect()){
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            UserData userData = new UserData(rs.getString("dni"), rs.getString("password"), rs.getString("name"),
+            rs.getString("surnames"), rs.getString("email"), rs.getString("address"), rs.getString("phone number"));
+            return userData;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+    
+    
     
     static String SelectUserPassword(int id) throws Exception{
         String sql = "SELECT password FROM USERS WHERE id=" + id;

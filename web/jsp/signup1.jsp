@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/b269aa07db.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../js/signup.js"></script>
-    <link rel="stylesheet" href="../css/signup.css">
+    <script src="${pageContext.request.contextPath}/js/signup.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signup.css">
 
     <title>Sign Up</title>
 </head>
@@ -21,7 +22,7 @@
             <h2>Register and start getting benefits</h2>
         </div>
 
-        <form action="#" id="form-slide-1" class="was-validated">
+        <form action="${pageContext.request.contextPath}/SignUpServlet" method="post" id="form-slide-1" class="was-validated">
             <input type="hidden" name="second-slide" value="n" />
             <div class="input-name">
                 <div>
@@ -41,11 +42,11 @@
             </div>
             <button type="submit" value="Continue">Continue</button>
         </form>
-        
+
     </div>
 </main>
 
-<img src="../images/Vectors-login.png" class="image-footer-background">
+<img src="${pageContext.request.contextPath}/images/Vectors-login.png" class="image-footer-background">
 </body>
 
 </html>

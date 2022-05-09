@@ -7,6 +7,10 @@ h1, h2 {
     margin-top: 1em;
 }
 
+title, .BankApText, .GetAll, .Forbetter {
+    font-family: 'Lexend Deca', monospace;
+}
+
 h1 {
     font-weight: bold;
     font-size: 36pt;
@@ -101,8 +105,9 @@ form input[type]::placeholder {
     color: #224957;
     border-radius: 10px;
     height: 2.75em;
-    width: 80%;
+    width: 95%;
     font-size: 12pt;
+    margin-left: 0.75em;
 }
 
 #signup2-content button {

@@ -1,0 +1,39 @@
+{
+  "transactions": [
+    {
+      "Quantity": 900,
+      "Involved": "Sebastian Fernandez",
+      "Date":"20/04/22"
+    },
+    {
+      "Quantity": -40,
+      "Involved": "Nahima Ortega",
+      "Date":"06/04/22"
+    },
+    {
+      "Quantity": 60,
+      "Involved": "Sebastian Fernandez",
+      "Date":"23/03/22"
+    },
+    {
+      "Quantity": 1200,
+      "Involved": "Sebastian Fernandez",
+      "Date":"23/03/22"
+    },
+    {
+      "Quantity": -420,
+      "Involved": "Nahima Ortega",
+      "Date":"06/04/22"
+    },
+    {
+      "Quantity": -740,
+      "Involved": "Nahima Ortega",
+      "Date":"06/04/22"
+    },
+    {
+      "Quantity": 34,
+      "Involved": "Sebastian Fernandez",
+      "Date":"23/03/22"
+    }
+  ]
+}

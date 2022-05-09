@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+h1 {
+    margin-top: 1.5em;
+    font-family: "Poppins", monospace;
+    color: #545454;
+    font-weight: 600;
+    font-size: 16pt;
+}
+
+#icons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-bottom: 3em;
+}
+
+button {
+    border: none;
+    background-color: #F65043;
+    border-radius: 50%;
+    padding: 0.5em 0.75em;
+    position: absolute;
+    right: 14rem;
+    height: 3em;
+    width: 3em;
+}
+
+.fa-pen {
+    color: white;
+}
+
+.fa-circle-user {
+    color: #3A5D69;
+}
+
+#page-title {
+    display: flex;
+    width: 70%;
+}
+
+.data-row {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1.5em;
+    gap: 2em;
+}
+
+#lastname-display, #name-display, #dni-display, #email-display, #phone-display, #address-display {
+    background-color: rgba(34, 73, 87, 0.89);
+    width: 30rem;
+    height: 3em;
+    border-radius: 0.5em;
+}
+
+input[type="text"]::placeholder {
+    color: white;
+    font-family: "Lexend Deca", monospace;
+    font-weight: 300;
+    font-size: 11pt;
+}
+
+.data-row label {
+    margin-bottom: 0.5em;
+    font-size: 8pt;
+    text-transform: uppercase;
+    font-family: "Lexend Deca", monospace;
+    color: #224957;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+#view-user-content {
+    margin-top: 4em;
+    margin-bottom: 3em;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 60px;
+    width: 90%;
+    height: 45rem;
+    box-shadow: 3px 3px 81px rgba(0, 0, 0, 0.1);
+}
