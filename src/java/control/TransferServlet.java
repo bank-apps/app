@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.UserAccount;
 
 /**
@@ -34,8 +35,11 @@ public class TransferServlet extends HttpServlet {
         
         TransferCommand transferCommand = new TransferCommand();
         transferCommand.init(getServletContext(), request, response);
-        UserAccount userAccount = (UserAccount) request.getAttribute("user");
-        Double amount = Double.parseDouble(request.getParameter("quantity"));
+        HttpSession session = request.getSession(true);
+        UserAccount userAccount = (UserAccount) session.getAttribute("user");
+        String quantity = request.getParameter("quantity");
+        Double amount = Double.parseDouble(quantity/*.substring(0, quantity.length() - 5)*/);
+        System.out.println(amount);
         String toIBAN = request.getParameter("recipient");
         String recipient = request.getParameter("firstname");
         String concept = request.getParameter("message");

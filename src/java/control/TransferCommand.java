@@ -28,14 +28,19 @@ public class TransferCommand {
     public void process(UserAccount userAccount, Double amount, String toIBAN, String recipient, String concept) throws ServletException, IOException {
         Bank bank = new Bank();
         UserData userData = userAccount.getData();
-        int id = DataBaseManager.SelectUserId(userData.getDNI());
+        int id = DataBaseManager.SelectUserId("'" + userData.getDNI() + "'");
         String fromIBAN = null;
         if (id != 0) {
             fromIBAN = DataBaseManager.SelectIBANWithID(id);
         } else {
             forward("/jsp/transfer.jsp");
         }
-        String result = bank.transfer(new BankAccount(fromIBAN), new BankAccount(toIBAN), recipient, amount, concept);
+        BankAccount from = new BankAccount(fromIBAN);
+        from.setBalance(DataBaseManager.SelectBalanceWithIBAN(fromIBAN));
+        BankAccount to = new BankAccount(toIBAN);
+        to.setBalance(DataBaseManager.SelectBalanceWithIBAN(toIBAN));
+        
+        String result = bank.transfer(from, to, recipient, amount, concept);
         if (result.equals("OK")) {
             forward("/jsp/dashboard.jsp");
         } else {

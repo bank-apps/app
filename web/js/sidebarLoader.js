@@ -1,4 +1,4 @@
 $(function(){
-    $("#sidebarLoaded").load("/app/html/sidebar.html");
+    $("#sidebarLoaded").load("/html/sidebar.html");
 });
 

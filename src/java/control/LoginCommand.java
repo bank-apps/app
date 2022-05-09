@@ -35,7 +35,7 @@ public class LoginCommand {
             UserData userData = DataBaseManager.SelectUserByDNI(dni);
             UserAccount userAccount = new UserAccount(userData);
             session.setAttribute("user", userAccount);
-            forward("/jsp/dashboard.jsp");
+            forward("/jsp/transfer.jsp");
         }
         else {
             forward("/jsp/failedlogin.jsp");

@@ -11,10 +11,10 @@
     <script src="https://kit.fontawesome.com/b269aa07db.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <link rel="stylesheet" href="../css/transfer.css">
-    <script src="../js/sidebarLoader.js"></script>
-    <script src="../js/transfer.js"></script>
-    <script src="../js/requieredCheckbox.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/transfer.css">
+    <script src="${pageContext.request.contextPath}/js/sidebarLoader.js"></script>
+    <script src="${pageContext.request.contextPath}/js/transfer.js"></script>
+    <script src="${pageContext.request.contextPath}/js/requieredCheckbox.js"></script>
 
 </head>
 <body>

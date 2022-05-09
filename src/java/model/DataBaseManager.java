@@ -24,8 +24,25 @@ public class DataBaseManager {
         }
     }
 
-    static Connection connect() {
+    /*static Connection connect() {
         // Cadena de conexión SQLite
+        Connection conn = null;
+        try {
+            String url = actualDB;
+            conn = DriverManager.getConnection(url);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return conn;
+    }*/
+    
+    static Connection connect() {
+        try {
+            // Cadena de conexión SQLite
+            Class.forName("org.sqlite.JDBC");
+        } catch (ClassNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
         Connection conn = null;
         try {
             String url = actualDB;
@@ -78,7 +95,7 @@ public class DataBaseManager {
         }
     }
     
-    public static UserData SelectUserByDNI(String dni) throws ClassNotFoundException {
+    public static UserData SelectUserByDNI(String dni) {
         String sql = "SELECT * FROM USERS WHERE dni=" + dni;
         try (Connection conn = connect()){
             Statement stmt = conn.createStatement();
@@ -92,12 +109,12 @@ public class DataBaseManager {
         return null;
     }
     
-    static String SelectAccountHistory(String IBAN) {
-        String sql = "SELECT \"account history\" FROM \"USER HISTORIES\" WHERE iban=\"" + IBAN + "\"";
+    public static Double SelectBalanceWithIBAN(String IBAN) {
+        String sql = "SELECT \"balance\" FROM \"BANK ACCOUNTS\" WHERE iban=\"" + IBAN + "\"";
         try ( Connection conn = connect()) {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
-            return rs.getString("account history");
+            return rs.getDouble("balance");
         } catch (SQLException e) {
             return null;
         }
@@ -114,7 +131,7 @@ public class DataBaseManager {
         }
     }
     
-    static String SelectUserPassword(int id) throws Exception{
+    static String SelectUserPassword(int id) throws Exception {
         String sql = "SELECT password FROM USERS WHERE id=" + id;
         try (Connection conn = connect()){
             Statement stmt = conn.createStatement();
