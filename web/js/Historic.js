@@ -1,5 +1,11 @@
 $.getJSON("../assets/json/historic.json", function (result) {
 
+    /*
+    var button = document.getElementById("botonTRANS");
+    button.addEventListener("click", function(){
+        window.location.href="http:larutadelservletedeG10"
+    });
+    */
 
     $.each(result.transactions, function (key, val) {
 

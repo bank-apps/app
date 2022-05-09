@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Improving Dashboard + Cards">
+    <list default="true" id="33f582ea-ef8f-45c9-ade2-5e13afdcac8d" name="Changes" comment="Improving Card View">
+      <change afterPath="$PROJECT_DIR$/web/assets/img/numberCredit.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/dashboard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/dynamicCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/dynamicCard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/html/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/html/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/Historic.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/Historic.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +46,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="26tOLegLxTgXqN84azJTsa0FET1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -92,7 +95,9 @@
       <workItem from="1651484876376" duration="192000" />
       <workItem from="1651492603957" duration="5318000" />
       <workItem from="1651571918974" duration="5519000" />
-      <workItem from="1651750939078" duration="2072000" />
+      <workItem from="1651750939078" duration="3057000" />
+      <workItem from="1651831042971" duration="2995000" />
+      <workItem from="1652096117555" duration="890000" />
     </task>
     <task id="LOCAL-00001" summary="Testting + Creating Dashboard">
       <created>1650328539258</created>
@@ -150,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651577458486</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Improving Card View">
+      <created>1651753373430</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1651753373430</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +190,7 @@
     <MESSAGE value="Added Functionality to Transactions" />
     <MESSAGE value="Added 3 Dynamic cards at Dashboard" />
     <MESSAGE value="Improving Dashboard + Cards" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improving Dashboard + Cards" />
+    <MESSAGE value="Improving Card View" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improving Card View" />
   </component>
 </project>

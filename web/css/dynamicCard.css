@@ -204,6 +204,21 @@ body {
     letter-spacing: 2px;
 }
 
+.valid_date3 {
+    position: absolute;
+    font-family: 'cc font', monospace;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    text-shadow: -9px 8.7px 6px rgba(0, 0, 0, 0.8);
+    bottom: 100px;
+    left: 95px;
+    z-index: 20;
+    transform: translateZ(30px);
+    letter-spacing: 2px;
+}
+
 .holder {
     position: absolute;
     font-family: 'cc font', monospace;

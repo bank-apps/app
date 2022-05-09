@@ -270,3 +270,9 @@ button:hover{
 .dropdown{
     margin-left: 3em;
 }
+
+.plateado{
+    margin-left: -12em;
+    padding-top: 259em;
+    bottom: 0;
+}
