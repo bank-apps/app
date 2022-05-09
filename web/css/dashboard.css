@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
+
+#form-cards button {
+    background-color: inherit;
+    border: none;
+}
+
 .contentHistorical {
     width: 100%;
     display: flex;
@@ -5,9 +12,7 @@
     align-items: center;
 }
 
-
 .CartContainer{
-    margin-top: 15%;
     float: left;
     height: auto;
     padding: 3.125em;
@@ -17,6 +22,29 @@
     box-shadow: 0 0.625em 1.25em #1687d933;
     width: 40em;
 }
+
+.CartContainer2{
+    float: left;
+    height: 1em;
+    padding: 3.125em;
+    margin-left: 8%;
+    background-color: #ffffff;
+    border-radius: 1.25em;
+    box-shadow: 0 0.625em 1.25em #1687d933;
+    width: auto;
+}
+
+.CartContainer3{
+    float: left;
+    height: 1em;
+    padding: 3.125em;
+    margin-left: 4%;
+    background-color: #ffffff;
+    border-radius: 1.25em;
+    box-shadow: 0 0.625em 1.25em #1687d933;
+    width: auto;
+}
+
 
 .HeaderCart{
     margin: auto;
@@ -33,6 +61,16 @@
     font-family: Montserrat, sans-serif;
     font-weight: 700;
     color: #2F3841;
+}
+
+.Heading2{
+    font-size: 1.25em;
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    color: #2F3841;
+    width: 100%;
+    text-align: center;
+
 }
 
 .HeadingResumen{
@@ -145,7 +183,6 @@
 .btn{
     width: 2.5em;
     height: 2.5em;
-    border-radius: 50%;
     background-color: #d9d9d9;
     display: flex;
     justify-content: center;
@@ -155,6 +192,7 @@
     font-weight: 900;
     color: #202020;
     cursor: pointer;
+    border-radius: 100px;
 }
 
 .count{
@@ -270,4 +308,59 @@ button:hover{
 
 .dropdown{
     margin-left: 3em;
+}
+
+.plateado{
+    margin-left: -12em;
+    padding-top: 259em;
+    bottom: 0;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #6FD1A0;
+    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+    overflow: auto;
+    
+}
+
+.container2 {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dosbotones{
+    margin-top: 5%;
+}
+
+#Carrito4:hover{
+    background-color: #6FD1A0;
+    color: #F2F5FA;
+}
+
+#Carrito3:hover{
+    background-color: #6FD1A0;
+    color: #F2F5FA;
+}
+
+.Heading2:hover{
+    color: white;
+}
+
+
+.dosbotones{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 15em;
 }

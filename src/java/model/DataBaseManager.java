@@ -62,7 +62,7 @@ public class DataBaseManager {
         }
     }
 
-    static int SelectUserId(String dni) throws ClassNotFoundException {
+    public static int SelectUserId(String dni) throws ClassNotFoundException {
         String sql = "SELECT id FROM USERS WHERE dni=" + dni;
         try ( Connection conn = connect()) {
             Statement stmt = conn.createStatement();

@@ -1,5 +1,21 @@
 $.getJSON("/app/assets/json/historic.json", function (result) {
 
+    /*
+console.log("JSDKDJSDJSJSJSK");
+console.log(${pageContext.request.contextPath});
+
+        $.get('${pageContext.request.contextPath}/myservlet', function(data) {
+        alert(data);
+    });
+
+     */
+
+    /*
+    var button = document.getElementById("botonTRANS");
+    button.addEventListener("click", function(){
+        window.location.href="http:larutadelservletedeG10"
+    });
+    */
 
     $.each(result.transactions, function (key, val) {
 

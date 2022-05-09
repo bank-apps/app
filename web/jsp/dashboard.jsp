@@ -1,3 +1,6 @@
+<%@page import="model.BankAccount"%>
+<%@page import="model.UserData"%>
+<%@page import="model.UserAccount"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +19,16 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css" rel="stylesheet" />
 
 
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://pattern.kivan-works.com/fonts/kredit.css">
+    <link href='https://fonts.googleapis.com/css?family=Lexend Deca' rel='stylesheet'>
+
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/dynamicCard.css">
+    <script src="${pageContext.request.contextPath}/js/dynamicCard.js"></script>
+
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
     <title>BankApp-Dashboard</title>
 
@@ -23,54 +36,122 @@
 
 <body>
 <div id="sidebarLoaded"></div>
+<div class="allDashboard">
+<div class="Trestarjetas">
+    
+    <% UserAccount account = (UserAccount) session.getAttribute("user"); %>
+    <% UserData userData = account.getData();%>
+    <% BankAccount bankAccount = (BankAccount)session.getAttribute("bankAccount");%>
 
-<!--<div class="temp"> HERE GOES DASHBOARD. <br> COMING SOON</div>-->
-
-<a href="${pageContext.request.contextPath}/jsp/viewcards.jsp">View your cards</a>
-
-<section class="contentHistorical">
-    <div class="CartContainer" id="Carrito2">
-        <div class="HeaderCart">
-            <h3 class="Heading">Transactions</h3>
-            <h5 class="Action">Show All</h5>
-        </div>
-
-        <!--
-                <div class="Cart-Items pad">
-
-                    <i class="fa-solid fa-people-arrows-left-right"></i>
-
-                    <div class="typeRED">Debit</div>
-                    <div class="about">
-                        <h1 class="title">Sebastian Fernandez</h1>
-                        <div class="amount">900$
-
-
-
-
-
-
-                    </div>
-
-                        <div class="dropdown">
-                            <button class="btn btn-success" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
+    <form id="form-cards" action="${pageContext.request.contextPath}/CardServlet" method="post">
+        <button type="submit">
+            <div class="tarjeta">
+                <div class="floating floating1">
+                    <div class="thickness"></div>
+                    <div class="thickness"></div>
+                    <div class="thickness"></div>
+                    <div class="card_body">
+                        <div class="logo svg"></div>
+                        <div class="paywave svg"></div>
+                        <div class="chips svg"></div>
+                        <div class="card_no text">
+                            1234-5678-9012-3456
                         </div>
 
-
+                        <div class="valid text">
+                            VALID <br> THUR
+                        </div>
+                        <div class="valid_date text">
+                            02/25
+                        </div>
+                        <div class="holder text"><%= userData.getName() + " " + userData.getSurnames() %></div>
+                        <div class="mastercard_icon svg"></div>
+                    </div>
                 </div>
-
-
--->
             </div>
+        </button>
+    </form>
 
-        </section>
+    <a href="otro2.html">
+        <div class="tarjeta">
+            <div class=" floating floating2">
+                <div class="thickness"></div>
+                <div class="thickness"></div>
+                <div class="thickness"></div>
+                <div class="card_body">
+                    <div class="logo2 svg"></div>
+                    <div class="paywave svg"></div>
+                    <div class="chips svg"></div>
+                    <div class="card_no2 text">
+                        TOTAL SPENT <br> THIS MONTH
+                    </div>
+                    <div class="valid_date2 text">
+                        $ 234,59
+                    </div>
+                    <div class="mastercard_icon svg"></div>
+                </div>
+            </div>
+        </div>
+    </a>
 
+    <a href="otro3.html">
+        <div class="tarjeta">
+            <div class="floating floating3">
+                <div class="thickness"></div>
+                <div class="thickness"></div>
+                <div class="thickness"></div>
+                <div class="card_body">
+                    <div class="logo3 svg"></div>
+                    <div class="paywave svg"></div>
+                    <div class="chips svg"></div>
+                    <div class="card_no2 text">
+                        YOUR TOTAL <br> BALANCE
+                    </div>
+                    <div class="valid_date3 text">
+                        $ <%= bankAccount.getBalance() %>
+                    </div>
+                    <div class="mastercard_icon svg"></div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+
+
+
+    <div class="contentHistorical">
+        <div class="CartContainer" id="Carrito2">
+            <div class="HeaderCart">
+                <h3 class="Heading">Transactions</h3>
+                <h5 class="Action">Show All</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="dosbotones">
+        <a href="prestamo.jsp">
+            <div class="contentHistorical11">
+                <div class="CartContainer2" id="Carrito3">
+                    <div class="HeaderCart">
+                        <h3 class="Heading2">Solicitar Préstamo</h3>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="transfer.jsp">
+            <div class="contentHistorical22">
+                <div class="CartContainer3" id="Carrito4">
+                    <div class="HeaderCart">
+                        <h3 class="Heading2">Realizar transferencia</h3>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    <div></div>
+
+</div>
 </body>
 </html>
