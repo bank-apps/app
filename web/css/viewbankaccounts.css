@@ -72,12 +72,14 @@ main {
     color: #545454;
 }
 
-form h2 {
+form button {
     font-family: 'Lexend Deca', monospace;
     font-weight: 600;
     font-size: 16pt;
     color: #545454;
     margin-top: 1.5em;
+    background-color: inherit;
+    border: none;
 }
 
 form {

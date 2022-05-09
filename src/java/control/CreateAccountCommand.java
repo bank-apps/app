@@ -14,38 +14,31 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Bank;
 import model.BankAccount;
-import model.UserAccount;
-import model.UserData;
 import model.DataBaseManager;
+import model.UserAccount;
 
-public class LoginCommand {
+public class CreateAccountCommand {
+    
     protected ServletContext context;
     protected HttpServletRequest request;
     protected HttpServletResponse response;
     
-    public void init(ServletContext context, HttpServletRequest request, HttpServletResponse response) {
+    public void init(ServletContext context, HttpServletRequest request, HttpServletResponse response){
         this.context = context;
         this.request = request;
         this.response = response;
     }
     
-    public void process(String dni, String password) throws ServletException, IOException, ClassNotFoundException {
+    public void process(UserAccount account) throws ClassNotFoundException, Exception{
         Bank bank = new Bank();
-        String loginResult = bank.login(dni, password);
-        if (loginResult.equals("OK")) {
+        if(bank.AddBankAccount(account).equals("OK")){
+            ArrayList<BankAccount> bankAccounts = DataBaseManager.SelectBankAccounts(account);
             HttpSession session = request.getSession(true);
-            UserData userData = DataBaseManager.SelectUserByDNI(dni);
-            UserAccount userAccount = new UserAccount(userData);
-            ArrayList<BankAccount> bankAccounts = DataBaseManager.SelectBankAccounts(userAccount);
-            BankAccount defaultBankAccount = bankAccounts.get(0);
-            session.setAttribute("user", userAccount);
             session.setAttribute("bankAccounts", bankAccounts);
-            session.setAttribute("bankAccount", defaultBankAccount);
-            forward("/jsp/dashboard.jsp");
-        }
-        else {
-            forward("/jsp/failedlogin.jsp");
-        }
+            forward("/jsp/viewbankaccounts.jsp");
+        }else{
+            forward("jsp/dashboard.jsp");
+        }        
     }
     
     protected void forward(String target) throws ServletException, IOException {

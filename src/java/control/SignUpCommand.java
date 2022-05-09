@@ -6,12 +6,17 @@ package control;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Bank;
+import model.BankAccount;
+import model.DataBaseManager;
+import model.UserAccount;
 import model.UserData;
 
 /**
@@ -40,6 +45,12 @@ public class SignUpCommand {
         System.out.println(registerMessage);
         if (registerMessage.equals("OK")) {
             forward("/jsp/dashboard.jsp");
+            HttpSession session = request.getSession(true);
+            UserAccount userAccount = (UserAccount)session.getAttribute("user");
+            ArrayList<BankAccount> bankAccounts = DataBaseManager.SelectBankAccounts(userAccount);
+            BankAccount defaultBankAccount = bankAccounts.get(0);
+            session.setAttribute("bankAccounts", bankAccounts);
+            session.setAttribute("bankAccount", defaultBankAccount);
         }
         else if (registerMessage.equals("Este usuario ya existe")) {
             forward("/jsp/failedsignup1.jsp");

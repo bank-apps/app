@@ -56,11 +56,6 @@ public class Bank {
             int owner_id = DataBaseManager.SelectUserId(userData.getDNI());
             values = "'" + IBAN + "'," + owner_id;
             DataBaseManager.Insert("'bank accounts'", fields, values);
-
-            // Table USER HISTORIES
-            fields = "iban";
-            values = "'" + IBAN + "'";
-            DataBaseManager.Insert("'user histories'", fields, values); 
              
             return "OK";
         } catch(Exception e) {
@@ -178,12 +173,14 @@ public class Bank {
     }
     
     public String AddBankAccount(UserAccount account) throws ClassNotFoundException, Exception{
-        try{
-            account.addBankAccount(new BankAccount(GenerateIBAN()));
+        try {
             String IBAN = GenerateIBAN();
+            account.addBankAccount(new BankAccount(IBAN));
             String fields = "iban,'owner id'";
-            int owner_id = DataBaseManager.SelectUserId(account.getData().getDNI());
+            System.out.println(account.getData().getDNI());
+            int owner_id = DataBaseManager.SelectUserId("'" + account.getData().getDNI() + "'");
             String values = "'" + IBAN + "'," + owner_id;
+            System.out.println(values);
             DataBaseManager.Insert("'bank accounts'", fields, values);
             return "OK";
         }catch(Exception e){
