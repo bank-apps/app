@@ -17,6 +17,29 @@
     width: 40em;
 }
 
+.CartContainer2{
+    float: left;
+    height: 1em;
+    padding: 3.125em;
+    margin-left: 8%;
+    background-color: #ffffff;
+    border-radius: 1.25em;
+    box-shadow: 0 0.625em 1.25em #1687d933;
+    width: auto;
+}
+
+.CartContainer3{
+    float: left;
+    height: 1em;
+    padding: 3.125em;
+    margin-left: 4%;
+    background-color: #ffffff;
+    border-radius: 1.25em;
+    box-shadow: 0 0.625em 1.25em #1687d933;
+    width: auto;
+}
+
+
 .HeaderCart{
     margin: auto;
     margin-bottom: 3em;
@@ -32,6 +55,16 @@
     font-family: Montserrat, sans-serif;
     font-weight: 700;
     color: #2F3841;
+}
+
+.Heading2{
+    font-size: 1.25em;
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    color: #2F3841;
+    width: 100%;
+    text-align: center;
+
 }
 
 .HeadingResumen{
@@ -144,7 +177,6 @@
 .btn{
     width: 2.5em;
     height: 2.5em;
-    border-radius: 50%;
     background-color: #d9d9d9;
     display: flex;
     justify-content: center;
@@ -154,6 +186,7 @@
     font-weight: 900;
     color: #202020;
     cursor: pointer;
+    border-radius: 100px;
 }
 
 .count{
@@ -275,4 +308,76 @@ button:hover{
     margin-left: -12em;
     padding-top: 259em;
     bottom: 0;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
+
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #6FD1A0;
+    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+}
+
+.container2 {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center {
+    width: 180px;
+    height: 60px;
+    position: absolute;
+}
+
+.btn {
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #2F3841;
+    outline: none;
+    transition: 1s ease-in-out;
+}
+
+svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: #2F3841;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+}
+
+.btn:hover {
+    transition: 1s ease-in-out;
+    background: #6FD1A0;
+}
+
+.btn:hover svg {
+    stroke-dashoffset: -480;
+}
+
+.btn span {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 100;
+
+}
+
+.dosbotones{
+    margin-top: 5%;
 }
