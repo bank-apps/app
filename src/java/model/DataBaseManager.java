@@ -131,4 +131,49 @@ public class DataBaseManager {
         }
         return null;
     }
+    
+    public static ArrayList<BankAccount> SelectBankAccounts(UserAccount account) throws ClassNotFoundException{
+        String sql = "SELECT * FROM 'BANK ACCOUNTS' WHERE \"OWNER ID\"=" + DataBaseManager.SelectUserId("'" + account.getData().getDNI() + "'");
+        try (Connection conn = connect()){
+            ArrayList<BankAccount> bankAccounts = new ArrayList<>();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while(rs.next()){
+                BankAccount bankAccount = new BankAccount(rs.getString("IBAN"));
+                bankAccount.setBalance(Double.valueOf(rs.getString("BALANCE")));
+                bankAccount.setCard(new CreditCard(rs.getString("CARD NUMBER")));
+                bankAccounts.add(bankAccount);
+            }
+            return bankAccounts;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+    
+    public static BankAccount GetBankBankAccount() throws ClassNotFoundException{
+        String sql = "SELECT * FROM 'BANK ACCOUNTS' WHERE \"OWNER ID\"=-1";
+        try (Connection conn = connect()){
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            BankAccount bankBankAccount = new BankAccount(rs.getString("IBAN"));
+            bankBankAccount.setBalance(rs.getDouble("BALANCE"));
+            return bankBankAccount;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+    
+    public static String GetCardStatus(int id) throws ClassNotFoundException{
+        String sql = "SELECT \"CARD STATUS\" FROM 'BANK ACCOUNTS' WHERE \"OWNER ID\"=" + id;
+        try (Connection conn = connect()){
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            return rs.toString();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
 }
