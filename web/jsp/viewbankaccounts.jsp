@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.BankAccount"%>
 <%@page import="model.UserData"%>
 <%@page import="model.UserAccount"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -28,18 +30,21 @@
         <div id="page-title">
             <h1>Your bank accounts</h1>
         </div>
+        
+        <% for (BankAccount bankAccount : (ArrayList<BankAccount>)session.getAttribute("bankAccounts")) { %>
         <div id="bank-account-info">
             <div class="info-row">
                 <h1>IBAN</h1>
-                <h2>ES66 0019 0020 9612 3456 7890</h2>
+                <h2><%= bankAccount.getIBAN() %></h2>
             </div>
             <div class="info-row">
                 <h1>Holder</h1>
                 <h2><%= userData.getName() + " " + userData.getSurnames() %></h2>
             </div>
         </div>
-        <form action="">
-            <h2><i class="fa-solid fa-plus"></i> Add new bank account</h2>
+         <% } %>
+        <form action="${pageContext.request.contextPath}/CreateAccountServlet" method="post">
+            <button type="submit"><i class="fa-solid fa-plus"></i> Add new bank account</button>
         </form>
     </div>
 </main>
