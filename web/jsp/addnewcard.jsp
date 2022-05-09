@@ -29,7 +29,7 @@
     </div>
     <div id="card-display">
       <div id="card-display-slide">
-          <form action="#" method="post">
+          <form action="${pageContext.request.contextPath}/ActivateCardServlet" method="post">
               <button type="submit"><img src="${pageContext.request.contextPath}/assets/img/addnewcard.png"></button>
           </form>
       </div>
