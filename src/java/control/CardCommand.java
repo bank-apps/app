@@ -33,9 +33,11 @@ public class CardCommand {
         int id = 0;
         try {
             id = DataBaseManager.SelectUserId("'" + userAccount.getData().getDNI() + "'");
+            System.out.println(id);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(CardServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
+        System.out.println(DataBaseManager.GetCardStatus(id).equals("1"));
         if (DataBaseManager.GetCardStatus(id).equals("1")) {
              forward("/jsp/viewcards.jsp");
         }
